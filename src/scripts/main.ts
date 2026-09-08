@@ -11,10 +11,10 @@ import { qs } from './utils';
 type PageModule = { init: () => void | Promise<void> };
 const pages: Record<string, () => Promise<PageModule>> = {
   home: () => import('./pages/home'),
-  industries: () => import('./pages/industries'),
+  strategies: () => import('./pages/strategies'),
   mission: () => import('./pages/mission'),
-  apply: () => import('./pages/apply'),
-  'request-crew': () => import('./pages/request-crew'),
+  waitlist: () => import('./pages/waitlist'),
+  'early-access': () => import('./pages/early-access'),
   privacy: () => import('./pages/privacy'),
   terms: () => import('./pages/privacy'),
   'privacy-request': () => import('./pages/privacy-request'),

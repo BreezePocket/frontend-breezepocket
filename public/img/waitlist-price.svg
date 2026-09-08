@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#eaf3f9"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <radialGradient id="cf" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#d0e1eb"/>
+    </radialGradient>
+    <pattern id="dots" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="32" cy="32" r="2.4" fill="#043273" fill-opacity=".08"/>
+    </pattern>
+    <symbol id="coin" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="url(#cf)" stroke="#043273" stroke-width="4"/>
+      <circle cx="50" cy="50" r="33" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <path d="M0 860C300 760 600 940 1000 830S1450 760 1600 810V1000H0Z" fill="url(#g)" opacity=".14"/>
+  <path d="M0 930C350 840 700 990 1100 900S1450 850 1600 890V1000H0Z" fill="url(#g)" opacity=".2"/>
+  <path d="M120 500H1480" stroke="#027bf6" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 16" stroke-opacity=".7"/>
+  <g transform="rotate(-10 800 500)">
+    <path d="M540 500 700 360H1060a40 40 0 0 1 40 40v200a40 40 0 0 1-40 40H700Z" fill="#fcfcfc" stroke="#043273" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="700" cy="500" r="20" fill="#eaf3f9" stroke="#043273" stroke-width="5"/>
+    <circle cx="900" cy="500" r="90" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".35"/>
+    <circle cx="900" cy="500" r="58" fill="none" stroke="url(#g)" stroke-width="4"/>
+    <circle cx="900" cy="500" r="26" fill="none" stroke="url(#g)" stroke-width="4"/>
+    <path d="M900 380v40M900 580v40M780 500h40M980 500h40" stroke="#043273" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="900" cy="500" r="9" fill="#027bf6"/>
+  </g>
+  <use href="#coin" x="1180" y="240" width="110" height="110"/>
+  <use href="#coin" x="330" y="620" width="80" height="80"/>
+  <circle cx="1300" cy="700" r="6" fill="#13eafb"/>
+  <circle cx="420" cy="300" r="5" fill="#027bf6"/>
+</svg>

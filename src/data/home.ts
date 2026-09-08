@@ -1,7 +1,7 @@
-/** Copy for the home page. Headings/labels mirror the reference; body text is original. */
+/** Copy for the home page. */
 
 export interface HeroCopy {
-  /** Two lines of the h1 (the first keeps its trailing space, as in the reference). */
+  /** Two lines of the h1 (the first keeps its trailing space so the lines read as one sentence). */
   title: readonly [string, string];
   /** Two spans of the subtitle; a `<br class="sp">` follows the first one. */
   subtitle: readonly [string, string];
@@ -28,122 +28,115 @@ export interface FaqItem {
 }
 
 export interface StandardsCopy {
-  image: { src: string; alt: string; width: number; height: number };
   title: readonly string[];
   description: string;
   cta: { label: string; href: string };
 }
 
 export const hero: HeroCopy = {
-  title: ['The New Standard ', 'in Staffing'],
+  title: ['Get paid while waiting ', 'for the price you want.'],
   subtitle: [
-    'Speed powered by AI. Curated by experts.',
-    'We deploy vetted crews that keep your timeline and your budget intact on sites where the stakes are highest.',
+    'The price you want, on your terms.',
+    'Deposit SOL, USDC, TESLA, name a price you’d happily sell or buy at and earn upfront yield once you set your target.',
   ],
-  scrollLabel: 'scroll to discover our process',
+  scrollLabel: 'scroll to see how it works',
 };
 
 export const flowSteps: readonly FlowStep[] = [
   {
     number: '01',
-    title: 'Activation, simplified',
+    title: 'Pick your asset',
     description:
-      'A single call sets mobilization in motion.<br> Your brief — trade, headcount and start date — goes straight to our vetted crews. No middle layers. No chasing. Just people on site within minutes.',
+      'Deposit SOL, mSOL, TESLA or USDC straight from your wallet.<br> Nothing leaves your control. Your funds sit in on-chain escrow contracts. Connect, choose, and you are ready in a minute.',
   },
   {
     number: '02',
-    title: 'Cleared to count',
+    title: 'Name your price',
     description:
-      'Every worker is screened and verified by our team ahead of dispatch. Background, compliance, certifications and fitness-for-duty are all checked under a zero-fail standard, so each person clears the gate on their first day.',
+      'Choose the price you’d happily sell at, or the price you’d happily buy at, and pick a date. That is the whole setup. No charts to watch, no positions to manage, no jargon to learn.',
   },
   {
     number: '03',
-    title: 'Proven field match',
+    title: 'Get paid while you wait',
     description:
-      'Availability alone is not enough. We send crews with a track record. By screening for prior performance, role fit and dependability, we build teams that last the distance — keeping your project at full strength from the first shift to the last.',
+      'Yield lands upfront, the moment your target is set. Earn your crypto or stocks yield without any hustle or babysitting.',
   },
   {
     number: '04',
-    title: 'Seamless arrival',
+    title: 'Filled or free to go again',
     description:
-      'We handle the final leg of every mobilization. Crews show up ready to work, with reporting instructions already confirmed. Live arrival tracking and hands-on coordination keep your shift starting on schedule, even as conditions in the field change.',
+      'If the market reaches your price by your date, the trade executes at exactly that price. You get the upfront yield and token at the price you set. If it doesn’t, you keep your coins and the income, and you can set a new target right away.',
   },
 ];
 
 /** HTML: the `<br class="pc">` only breaks on desktop. */
-export const featuresTitle = 'Designed for today&#39;s operations,<br class="pc"> beyond legacy staffing workflows.';
+export const featuresTitle = 'Designed for holders,<br class="pc"> not for full-time traders.';
 
 export const features: readonly FeatureItem[] = [
   {
-    icon: '/icons/features/rapid-activation.svg',
-    iconAlt: 'Rapid Activation icon',
-    title: 'Rapid Activation',
+    icon: '/icons/features/earn-holding.svg',
+    iconAlt: 'Earn While Holding icon',
+    title: 'Earn While Holding',
     description:
-      'Speed is a discipline we practice. Machine learning turns our staffing process into on-demand logistics, placing an accurately matched workforce the instant a need arises.',
+      'Deposit BTC, ETH or SOL and earn additional income without selling. Your coins keep working while you keep holding, with no trading and nothing to babysit.',
   },
   {
-    icon: '/icons/features/rigorous-selection.svg',
-    iconAlt: 'Rigorous Selection icon',
-    title: 'Rigorous Selection',
+    icon: '/icons/features/earn-sell.svg',
+    iconAlt: 'Earn While Waiting to Sell icon',
+    title: 'Earn While Waiting to Sell',
     description:
-      'Location matters as much as skill. Our AI engine locates and reaches qualified workers inside a set radius, locking in the best local contractors first and weighing both cost and capability.',
+      '“I’d happily sell my SOL at $250.” Set that price and get paid while you wait for it. If the market gets there, you sell at your number and keep the yield. If it doesn’t, you keep your SOL and the income.',
   },
   {
-    icon: '/icons/features/verified.svg',
-    iconAlt: '100% Verified Before Arrival icon',
-    title: '100% Verified Before Arrival',
+    icon: '/icons/features/earn-buy.svg',
+    iconAlt: 'Earn While Waiting to Buy icon',
+    title: 'Earn While Waiting to Buy',
     description:
-      'A Zero-Trust verification model, backed by secure API integrations, automates background checks and drug screening and withholds dispatch until every worker is fully cleared.',
+      '“I’d happily buy ETH at $2,500.” Put your stablecoins to work while you wait for that price. If ETH gets there, you buy at your number and keep the yield. If not, you keep your cash and the income.',
   },
   {
-    icon: '/icons/features/controlled-outcomes.svg',
-    iconAlt: 'Controlled Outcomes icon',
-    title: 'Controlled Outcomes',
+    icon: '/icons/features/auto-accumulate.svg',
+    iconAlt: 'Auto-Accumulate Crypto icon',
+    title: 'Auto-Accumulate Crypto',
     description:
-      'We keep results predictable by controlling the two variables that matter most in staffing—cost and compliance—favoring local mobilization and automating safety checks on every dispatch.',
+      'Rather than taking income, let BreezePocket roll your targets and accumulate more of an asset at prices you set. A patient, hands-off way to build a position over time.',
   },
 ];
 
 export const standards: StandardsCopy = {
-  image: {
-    src: '/img/apply-door-wide.webp',
-    alt: 'Crew in safety vests coordinating on an industrial site',
-    width: 800,
-    height: 400,
-  },
-  title: ['Nuclear-grade ', 'standards across ', 'every site.'],
+  title: ['Built on Solana. ', 'Coming to ', 'Seeker.'],
   description:
-    'Built for nuclear-grade settings, our process demands strict badge compliance, safeguarded schedules and no tolerance for error.',
-  cta: { label: 'Explore our industries', href: '/industries' },
+    'BreezePocket runs on Solana for fast, low-cost settlement and will ship on Seeker, the Solana mobile phone, so setting a price target is as easy as checking your balance.',
+  cta: { label: 'Explore strategies', href: '/strategies' },
 };
 
-export const faqTitle = 'How we work and how we deliver industrial-grade staffing.';
+export const faqTitle = 'How BreezePocket works, and what to expect.';
 
 export const faq: readonly FaqItem[] = [
   {
-    question: 'How fast can crews be mobilized?',
+    question: 'How do I get paid while waiting?',
     answer:
-      'We work to your timeline, not ours. Because our platform keeps a large pool of verified industrial craft on hand, the weeks lost to conventional hiring cycles disappear. A single call starts our mobilization engine, which sources and dispatches precisely matched crews within hours rather than days, keeping your critical path fully staffed.',
+      'You deposit an asset, name the price you’d happily sell or buy at, and pick a date. In return you receive income upfront, paid the moment your target is set. Behind the scenes this is a covered-call or cash-secured-put style position, handled for you, so you never touch an options interface. You just name a price and get paid while you wait.',
   },
   {
-    question: 'How do you handle compliance & background checks?',
+    question: 'What happens when the price hits my target?',
     answer:
-      'Our approach is a Zero-Fail Compliance model. Well before anyone is approved for dispatch, our system automatically verifies background checks, drug screening (FFD) and the certifications specific to your site, nuclear-grade requirements included. Nobody who isn’t completely cleared reaches the gate, so your badging office starts Day 1 without a single surprise.',
+      'If the market reaches your price on or before your date, your trade fills at that price: you sell your asset for stablecoins, or buy the asset with your stablecoins. You keep the income either way. If the price never gets there, nothing changes. Your deposit stays yours, the income stays yours, and you can set a new target whenever you like.',
   },
   {
-    question: 'What is the coverage during outages?',
+    question: 'What are the risks?',
     answer:
-      'Outages run around the clock, and so does our coordination. We cover the complete spectrum of outage trades, from general labor and painting through specialized repair work and scheduling. Just as important, we own the final leg of arrival, tracking every deployment live so both day and night shifts stay fully crewed even when conditions on site change.',
+      'If the price crosses your target, you sell or buy at that price and miss any further move beyond it. Crypto prices are volatile, and the value of what you hold can fall while you wait. Like any on-chain product, BreezePocket carries smart-contract and market risk, and income is never guaranteed. Nothing on this site is financial advice, so only deposit what you are comfortable holding.',
   },
   {
-    question: 'How does Vectr differ from traditional staffing vendors?',
+    question: 'Which assets and wallets are supported?',
     answer:
-      'Conventional vendors react; Vectr operates as an engine. Where legacy agencies lean on hand-sorted resumes and whoever happens to be free, we combine intelligent workflows with expert curation to deliver precision that has been proven in the field. Rather than simply finding people who want work, we dispatch tested crews built for the relentless pace of a critical-path environment.',
+      'SOL, BTC, ETH and USDC to start, with more assets over time. BreezePocket works with Solana wallets such as Phantom and Solflare, and with Seeker’s built-in wallet once we ship on the phone. It is non-custodial: your funds stay in your wallet and in on-chain contracts, never in an account we hold.',
   },
 ];
 
 export const cta = {
-  lines: ['Staff your outage with fast response, ', 'and crews you can rely on.'] as const,
-  href: '/request-crew',
-  label: 'Request Crews',
+  lines: ['Stop waiting for free. ', 'Get paid while you wait.'] as const,
+  href: '/waitlist',
+  label: 'Join Waitlist',
 };

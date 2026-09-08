@@ -1,16 +1,16 @@
-/** Copy for the Our Mission page. Headings match the reference; paragraph copy is original. */
+/** Copy for the Our Mission page. */
 
 export const missionHero = {
-  title: 'Operational Velocity',
+  title: 'Waiting should get paid.',
   text:
-    'Each day a piece of critical infrastructure stands idle or short-handed, it quietly bleeds capital. Vectr shortens conventional workforce mobilization timelines by 70%, placing certified, specialized technical crews on Nuclear, Gas, and Data Center projects before a delay ever reaches your bottom line.',
-  image: { src: '/img/mission-hero.webp', alt: 'Abstract blue dynamic motion graphic', width: 3008, height: 1600 },
+    'Most crypto holders are already waiting: for a price to sell at, a dip to buy, or simply for the long run to play out. BreezePocket turns that waiting into income, on Solana, without asking you to become a trader.',
+  image: { src: '/img/mission-hero.svg', alt: 'Soft gradient waves suggesting a calm breeze', width: 3008, height: 1600 },
 };
 
 export const missionSubSection = {
-  title: 'The Real Cost of an Empty Job Site',
+  title: 'The real cost of idle crypto',
   body:
-    'A stalled specialized project is never just an unfilled seat. It is a financial leak that compounds by the hour: every hour spent waiting on specialized people eats budget, slips your commercial operation date, and puts your ROI at risk. We never sit back and wait for talent to show up, and we never bury your desk under piles of unscreened resumes. We treat every open slot as a critical operational bottleneck that calls for immediate, precise resolution.',
+    'Coins sitting in a wallet do nothing while you wait for the price you want. The usual answers are active trading, DeFi strategies, or options and derivatives, all of which are hard to understand and need constant attention. Most people do not want a second job. They want something simple: name a price, get paid, and get on with their day. That is exactly what BreezePocket does.',
 };
 
 export interface DrawerBullet {
@@ -18,75 +18,75 @@ export interface DrawerBullet {
   text: string;
 }
 
-export const friction = {
+export const problem = {
   number: '01',
-  title: 'The Friction',
-  image: { src: '/img/middleman.webp', alt: 'Silhouette of person walking through industrial corridor', width: 400, height: 400 },
-  subtitle: 'The Hidden Cost of "The Middleman": a systemic inefficiency.',
+  title: 'The Problem',
+  image: { src: '/img/mission-problem.svg', alt: 'Illustration of idle coins resting in a wallet', width: 400, height: 400 },
+  subtitle: 'Idle assets, complicated tools, and no time to manage them.',
   description:
-    'It drags high-velocity industries—Nuclear, Gas, Data Centers—down to the pace of paperwork and inboxes. For decades the sector has tolerated a broken model. The usual way of mobilizing workforce resources is built on wasted motion:',
+    'Crypto holders are stuck between two poor options: leave coins idle, or take on strategies built for professionals. Here is what we keep hearing:',
   bullets: [
     {
-      title: 'Zero "Rolodex" Guesswork',
-      text: 'Conventional agencies lean on hand-typed email threads, personal contacts, and stale databases while your site stays dark. We never guess; we map data on the spot to match the specialized skills you need.',
+      title: 'Idle assets',
+      text: 'Most people hold SOL, BTC or ETH and simply wait. The coins sit there earning nothing while the market decides what to do next.',
     },
     {
-      title: 'Direct Access with No Layering',
-      text: 'You work directly with mobilization specialists who are backed by clean data. No stacked account managers, no game of telephone, and no paperwork bottlenecks holding up gate access.',
+      title: 'Too much complexity',
+      text: 'Active trading, DeFi strategies, options and derivatives all promise income, but they are difficult to understand and easy to get wrong.',
     },
     {
-      title: 'Predictive Crew Pipeline',
-      text: 'Rather than scrambling after a specialized technician walks off or fails a background check, our pipelines keep a standby roster actively maintained around your outage schedules.',
+      title: 'Constant management',
+      text: 'Even when a strategy works, it needs watching. Positions, rolls, expiries and rebalances turn a simple idea into a daily chore.',
     },
   ] satisfies DrawerBullet[],
 };
 
 export const engine = {
   number: '02',
-  title: 'The Vectr Engine',
-  image: { src: '/img/vectr-engine.webp', alt: 'Hands typing on laptop keyboard', width: 400, height: 400 },
-  subtitle: 'Precision Through Automation',
+  title: 'The BreezePocket Engine',
+  image: { src: '/img/mission-engine.svg', alt: 'Illustration of a price target with income paid upfront', width: 400, height: 400 },
+  subtitle: 'Name a price. Get paid. That is it.',
   body: [
-    'Vectr swaps manual friction for computational speed. To us, workforce mobilization is a data problem, not a networking exercise.',
-    'With advanced AI and automation we cut out the administrative lag that weighs down traditional vendors. Our technology carries the heavy lifting, which lets us:',
+    'BreezePocket takes the strategies professionals use to earn on assets they already hold and hides all of the machinery. You tell us the price you’d happily sell or buy at and a date; we handle the options mechanics on-chain.',
+    'Your income arrives upfront. Your trade fills only at your price. Your funds never leave your wallet or the contracts you can see. Three things make it work:',
   ],
   features: [
-    { title: 'Identify Signals', text: 'Our systems read technical capability data in an instant to pinpoint the expertise complex projects demand.' },
-    { title: 'Automate Validation', text: 'Automated checks on our platform confirm qualifications and pair talent with roles in short order.' },
-    { title: 'Instant Deployment', text: 'We shrink the gap between spotting a workforce need and putting fully prepared technical teams on site.' },
+    { title: 'Name your price', text: 'Pick the price you’d be happy to sell or buy at, and the date you are willing to wait until.' },
+    { title: 'Get paid upfront', text: 'Income lands the moment your target is set, and it is yours whatever the market does next.' },
+    { title: 'Filled only on your terms', text: 'If the market reaches your price, the trade executes at that price. If not, you keep your coins and go again.' },
   ] satisfies DrawerBullet[],
 };
 
 export const outcome = {
   number: '03',
   title: 'The Outcome',
-  image: { src: '/img/outcome-worker.webp', alt: 'Industrial worker in safety gear at facility', width: 400, height: 400 },
-  subtitle: 'Engineered for Execution',
-  lead: 'Working with Vectr is an investment in operational continuity.',
+  image: { src: '/img/mission-outcome.svg', alt: 'Illustration of a balance growing over time', width: 400, height: 400 },
+  subtitle: 'Simple income for everyday holders',
+  lead: 'With BreezePocket, your waiting finally works for you.',
   items: [
     {
       number: '01',
-      title: 'Shield Your Margins',
-      text: 'We remove the idle hours that drain capital. You pay for work getting done, not for weeks spent waiting on a vendor to staff a crew.',
+      title: 'Earn while holding',
+      text: 'Keep your BTC, ETH or SOL and earn additional income on top, without selling and without watching charts.',
     },
     {
       number: '02',
-      title: 'Protect Critical Timelines',
-      text: 'Keep your critical path intact. Move between phases confident that your specialized labor will arrive on site, fully badged, and ready to go.',
+      title: 'Earn while waiting',
+      text: 'Name the price you’d sell or buy at and get paid while the market makes up its mind. Filled at your price, or free to go again.',
     },
     {
       number: '03',
-      title: 'Pay for Value, Not Overhead',
-      text: 'We strip out the internal administrative bloat that traditional brokerages hand down to you as inflated markup rates.',
+      title: 'Accumulate on your terms',
+      text: 'Prefer more coins to more cash? Auto-accumulate rolls your targets to build a position at prices you chose.',
     },
   ],
 };
 
 export const missionBridge = {
-  lines: ['We are the bridge between digital ', 'intelligence and real world ', 'infrastructure.'],
-  text: 'Bureaucracy has no right to slow the industries that keep the world running. This is not resource supply. It is engineered speed.',
+  lines: ['Waiting is the one thing ', 'every crypto holder does. ', 'Now it pays.'],
+  text: 'BreezePocket is non-custodial, built on Solana, and coming to Seeker. Set a price, get paid, and let the market come to you.',
   ctas: [
-    { label: 'Apply', href: '/apply', variant: 'glass' },
-    { label: 'Request Crews', href: '/request-crew', variant: 'dark' },
+    { label: 'Join Waitlist', href: '/waitlist', variant: 'glass' },
+    { label: 'Get Early Access', href: '/early-access', variant: 'dark' },
   ] as const,
 };

@@ -1,13 +1,13 @@
 /**
  * Hero WebGL scene — a procedural low-poly world flown over by the scroll-driven camera.
  *
- * Layout (world units, Y up, one storey = 4; see ./constants.ts AREAS):
- *   A  downtown      (0, 0)        camera progress 0        "hero"
- *   B  power plant   (45, -100)    0.25                     "cleared to count"
- *   C  wind farm     (100, -240)   0.64                     "proven field match"
- *   D  campus        (190, -318)   0.82, pull-back to 1     "seamless arrival"
- * The districts are linked by red routes with blue signal lines (continuous pulse); the search
- * grid at the substation fades in over TIMING.grid and the campus emblem past TIMING.emblem.
+ * Layout (world units, Y up, one coin = 4; see ./constants.ts AREAS):
+ *   A  holdings      token stacks on a plaza          progress 0     "pick your asset"
+ *   B  sell target   rising price bars + target line  0.2–0.5        "name your price"
+ *   C  buy target    dipping bars + target line below 0.75           "get paid while you wait"
+ *   D  accumulate    growing coin rows + wave emblem  0.9–1          "filled or free to go again"
+ * The districts are linked by red routes with blue signal lines (continuous pulse); the price grid
+ * beside the buy chart fades in over TIMING.grid and the emblem past TIMING.emblem.
  *
  * Camera: the home page feeds 0..1 camera progress (pages/home/flow.ts). It is smoothed with a
  * critically damped spring (smoothTime 0.15 s, 0.1 s on mobile) and turned into a pose by

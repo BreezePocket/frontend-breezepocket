@@ -11,9 +11,8 @@ interface Props {
   ctas: ReadonlyArray<{ label: string; href: string; variant: 'dark' | 'glass' | 'light' }>;
   headingLevel?: 'h1' | 'h2';
   show?: boolean;
-  maskId?: string;
 }
-const { lines, text, ctas, headingLevel = 'h2', show = false, maskId = 'bridge-arrow-mask' } = Astro.props;
+const { lines, text, ctas, headingLevel = 'h2', show = false } = Astro.props;
 const Heading = headingLevel;
 ---
 <section class:list={['mission-bridge', { show }]}>
@@ -27,7 +26,7 @@ const Heading = headingLevel;
     <div class="mission-bridge__blur"></div>
   </div>
   <div class="mission-bridge__content">
-    <div class="mission-bridge__logo"><LoaderLogo maskId={maskId} /></div>
+    <div class="mission-bridge__logo"><LoaderLogo /></div>
     <Heading class="mission-bridge__title">
       {lines.map((line) => <span class="mission-bridge__title-line">{line}</span>)}
     </Heading>

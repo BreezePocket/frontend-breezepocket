@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#eaf3f9"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <radialGradient id="cf" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#d0e1eb"/>
+    </radialGradient>
+    <pattern id="dots" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="32" cy="32" r="2.4" fill="#043273" fill-opacity=".08"/>
+    </pattern>
+    <symbol id="coin" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="url(#cf)" stroke="#043273" stroke-width="4"/>
+      <circle cx="50" cy="50" r="33" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <path d="M0 860C300 760 600 940 1000 830S1450 760 1600 810V1000H0Z" fill="url(#g)" opacity=".14"/>
+  <path d="M0 930C350 840 700 990 1100 900S1450 850 1600 890V1000H0Z" fill="url(#g)" opacity=".2"/>
+  <ellipse cx="800" cy="700" rx="300" ry="30" fill="#043273" fill-opacity=".07"/>
+  <use href="#coin" x="640" y="330" width="120" height="120"/>
+  <use href="#coin" x="740" y="300" width="120" height="120"/>
+  <use href="#coin" x="840" y="330" width="120" height="120"/>
+  <rect x="560" y="410" width="480" height="270" rx="36" fill="#fcfcfc" stroke="#043273" stroke-width="5"/>
+  <path d="M560 470h480" stroke="#043273" stroke-width="5" stroke-linecap="round" stroke-opacity=".3"/>
+  <path d="M900 510h140a20 20 0 0 1 20 20v60a20 20 0 0 1-20 20H900a50 50 0 0 1 0-100Z" fill="#eaf3f9" stroke="#043273" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="930" cy="560" r="14" fill="url(#g)"/>
+  <path d="M1110 330v-32M1094 314h32" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="470" cy="380" r="6" fill="#13eafb"/>
+  <circle cx="1180" cy="620" r="5" fill="#027bf6"/>
+</svg>

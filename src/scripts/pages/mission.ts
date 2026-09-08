@@ -114,7 +114,7 @@ function initMissionBridge() {
   const mm = gsap.matchMedia();
 
   mm.add('(min-width: 981px)', () => {
-    if (logo) gsap.set(logo, { rotation: -60, opacity: 0, transformOrigin: '50% 50%' });
+    if (logo) gsap.set(logo, { y: 40, opacity: 0, scale: 0.9, transformOrigin: '50% 50%' });
     cubes.forEach((cube) => {
       const [x, y] = CUBE_OFFSETS[cube.id] ?? [0, 0];
       gsap.set(cube, { opacity: 0, x, y });
@@ -131,7 +131,7 @@ function initMissionBridge() {
       onEnter: () => {
         bridge.classList.add('show');
         const tl = gsap.timeline();
-        if (logo) tl.to(logo, { rotation: 0, opacity: 1, duration: 1.5, ease: 'power3.out' }, 0);
+        if (logo) tl.to(logo, { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' }, 0);
         if (cubes.length) tl.to(cubes, { opacity: 1, x: 0, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out' }, 0);
         if (maskLines.length) tl.to(maskLines, { strokeDashoffset: 0, duration: 0.5, ease: 'power2.out' }, 0.8);
         tl.to(lines, { opacity: 1, y: 0, x: '0%', rotationY: 0, rotationX: 0, duration: 1.5, stagger: 0.12, ease: 'power3.out' }, 0.3);

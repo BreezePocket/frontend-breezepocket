@@ -1,0 +1,200 @@
+---
+import '@/styles/pages/waitlist.css';
+import Base from '@/layouts/Base.astro';
+import SubHero from '@/components/SubHero.astro';
+import CtaSection from '@/components/CtaSection.astro';
+import PillButton from '@/components/PillButton.astro';
+import { waitlistHero, waitlistSections, waitlistCta, assetOptions, experienceOptions, waitlistModal } from '@/data/waitlist';
+
+const TOTAL_STEPS = 5;
+const steps = [
+  { n: 1, title: waitlistModal.steps.details },
+  { n: 2, title: waitlistModal.steps.assets },
+  { n: 3, title: waitlistModal.steps.experience },
+  { n: 4, title: waitlistModal.steps.wallet },
+  { n: 5, title: waitlistModal.steps.review },
+];
+---
+<Base page="waitlist" title="Join the Waitlist" description="Join the BreezePocket waitlist and be first to get paid while waiting for the crypto price you want. Solana first, Seeker right after.">
+  <div class="apply">
+    <SubHero title={waitlistHero.title} text={waitlistHero.text}>
+      <div class="flx sub-hero__cta">
+        <PillButton variant="dark" data-apply-trigger="true">{waitlistHero.cta}</PillButton>
+      </div>
+    </SubHero>
+
+    <div class="apply-sections sticky-stack">
+      {waitlistSections.map((section) => (
+        <div class="apply-section-wrapper sticky-stack__item">
+          <section class="apply-section">
+            <div class="apply-section__side">
+              <h2 class="apply-section__title">{section.title}</h2>
+            </div>
+            <div class="apply-section__content">
+              <p class="apply-section__text">{section.text}</p>
+              <div class="apply-section__image">
+                <img
+                  src={section.image.src}
+                  alt={section.image.alt}
+                  width={section.image.width}
+                  height={section.image.height}
+                  loading="lazy"
+                  decoding="async"
+                  class="apply-section__img"
+                />
+              </div>
+            </div>
+            <div class="apply-section__overlay" aria-hidden="true"></div>
+          </section>
+        </div>
+      ))}
+    </div>
+
+    <CtaSection lines={waitlistCta.lines} subtitle={waitlistCta.subtitle}>
+      <PillButton variant="light" data-apply-trigger="true">{waitlistCta.label}</PillButton>
+    </CtaSection>
+  </div>
+
+  <div class="apply-modal" role="dialog" aria-modal="true" aria-labelledby="apply-modal-title-1" data-lenis-prevent tabindex="-1">
+    <div class="apply-modal__overlay"></div>
+    <div class="apply-modal__container">
+      <div class="modal-steps-wrapper">
+        {steps.map((step) => (
+          <div class:list={['modal-card apply-modal__card modal-step', { 'modal-step--active': step.n === 1 }]} data-modal-step={step.n}>
+            <div class="modal-nav">
+              <button class="modal-nav__arrow modal-nav__arrow--prev" type="button" aria-label="Previous step" disabled={step.n === 1} data-modal-prev>
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7 0.707031L1.00034 6.70737L7 12.707" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+              <span class="modal-nav__counter">{step.n} of {TOTAL_STEPS}</span>
+              <button class="modal-nav__arrow modal-nav__arrow--next" type="button" aria-label="Next step" disabled={step.n === TOTAL_STEPS} data-modal-next>
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M1 0.707031L6.99966 6.70737L1 12.707" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </div>
+            <h3 class="apply-modal__title" id={`apply-modal-title-${step.n}`}>{step.title}</h3>
+
+            {step.n === 1 && (
+              <div class="form apply-modal__form">
+                <div class="form__field">
+                  <label class="form__label" for="fullName">Full Name <span class="form__required"> *</span></label>
+                  <input type="text" id="fullName" name="fullName" class="form__input" placeholder="Your Name" required autocomplete="name" data-error-message={waitlistModal.errors.fullName} />
+                  <span class="form__error" data-field-error aria-live="polite"></span>
+                </div>
+                <div class="form__field">
+                  <label class="form__label" for="email">Email <span class="form__required"> *</span></label>
+                  <input type="email" id="email" name="email" class="form__input" placeholder="your@email.com" required autocomplete="email" data-error-message={waitlistModal.errors.email} />
+                  <span class="form__error" data-field-error aria-live="polite"></span>
+                </div>
+                <div class="form__field">
+                  <label class="form__label" for="handle">Telegram or X handle (optional)</label>
+                  <input type="text" id="handle" name="handle" class="form__input" placeholder="@yourhandle" autocomplete="off" data-error-message />
+                  <span class="form__error" data-field-error aria-live="polite"></span>
+                </div>
+              </div>
+            )}
+
+            {step.n === 2 && (
+              <>
+                <div class="form__checkbox-grid" role="group" aria-labelledby="apply-modal-title-2">
+                  {assetOptions.map((opt) => (
+                    <label class="form__checkbox">
+                      <input type="checkbox" name="assets" value={opt.value} />
+                      <span class="form__checkbox-icon">
+                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                      <span class="form__checkbox-label">{opt.label}</span>
+                    </label>
+                  ))}
+                </div>
+                <p class="form__error apply-modal__step-error" data-step-error data-error-message={waitlistModal.errors.assets} aria-live="polite"></p>
+              </>
+            )}
+
+            {step.n === 3 && (
+              <>
+                <div class="form__radio-card-grid" role="radiogroup" aria-labelledby="apply-modal-title-3">
+                  {experienceOptions.map((opt) => (
+                    <label class="form__radio-card">
+                      <input type="radio" name="experience" value={opt.value} />
+                      <span>{opt.label}</span>
+                    </label>
+                  ))}
+                </div>
+                <p class="form__error apply-modal__step-error" data-step-error data-error-message={waitlistModal.errors.experience} aria-live="polite"></p>
+              </>
+            )}
+
+            {step.n === 4 && (
+              <div class="form apply-modal__form">
+                <div class="form__field">
+                  <label class="form__label" for="wallet">Solana wallet address (optional)</label>
+                  <input type="text" id="wallet" name="wallet" class="form__input" placeholder="Your Solana address" autocomplete="off" spellcheck="false" data-error-message={waitlistModal.errors.wallet} />
+                  <span class="form__error" data-field-error aria-live="polite"></span>
+                </div>
+                <div class="form__field">
+                  <label class="form__label" for="interest">What would you like to earn on? (optional)</label>
+                  <textarea id="interest" name="interest" class="form__textarea" placeholder="e.g. I hold SOL and would happily sell some at a higher price" rows="4"></textarea>
+                </div>
+              </div>
+            )}
+
+            {step.n === 5 && (
+              <>
+                <div class="review-summary">
+                  <div class="review-summary__item" data-review-section="contact">
+                    <h4>Contact</h4>
+                    <div class="review-summary__content" data-review-contact></div>
+                  </div>
+                  <div class="review-summary__item" data-review-section="assets">
+                    <h4>Assets</h4>
+                    <div class="review-summary__content" data-review-assets></div>
+                  </div>
+                  <div class="review-summary__item" data-review-section="profile">
+                    <h4>Profile</h4>
+                    <div class="review-summary__content" data-review-profile></div>
+                  </div>
+                  <div class="review-summary__item" data-review-section="wallet">
+                    <h4>Wallet</h4>
+                    <div class="review-summary__content" data-review-wallet></div>
+                  </div>
+                </div>
+                <div class="form__disclaimer-wrap">
+                  <p class="form__disclaimer">{waitlistModal.disclaimer}<a href="/privacy">Privacy Policy</a>.</p>
+                  <details class="form__disclaimer-details">
+                    <summary>Read more</summary>
+                    <span>{waitlistModal.disclaimerDetails}</span>
+                  </details>
+                </div>
+                <p class="form__error apply-modal__step-error" data-modal-error data-error-message={waitlistModal.errors.submit} aria-live="assertive"></p>
+                <button type="submit" class="pill-btn pill-btn--dark w-100" data-modal-submit="true">
+                  <span class="pill-btn-span">Join the Waitlist</span>
+                </button>
+              </>
+            )}
+          </div>
+        ))}
+
+        <div class="apply-modal__card modal-card modal-success" data-modal-success>
+          <h3 class="modal-success__title" id="apply-modal-title-success" data-success-title data-success-template={waitlistModal.success.title}>{waitlistModal.success.title}</h3>
+          <p class="modal-success__body">{waitlistModal.success.body}</p>
+          <div class="modal-success__cta">
+            <div class="flx">
+              <a href="/" class="pill-btn pill-btn--dark w-100" data-success-home="true">
+                <span class="pill-btn-span">{waitlistModal.success.home}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="apply-modal__close" type="button" data-modal-close>
+      <span>Close</span>
+      <div class="am-close-line"></div>
+    </button>
+  </div>
+</Base>

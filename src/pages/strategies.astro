@@ -1,0 +1,69 @@
+---
+import Base from '@/layouts/Base.astro';
+import SubHero from '@/components/SubHero.astro';
+import SubHeroFigure from '@/components/SubHeroFigure.astro';
+import StrategiesDiagram from '@/assets/strategies-diagram.svg';
+import CtaSection from '@/components/CtaSection.astro';
+import { strategies, strategiesPage } from '@/data/strategies';
+// Imported after Base so the page rules follow the shared stylesheets in the bundle
+// (`.industry-row-wrapper { position: sticky }` must beat `.sticky-stack__item { position: relative }`).
+import '@/styles/pages/strategies.css';
+
+const { hero, heroImage, sectionTitle, cta } = strategiesPage;
+---
+<Base page="strategies" title="Strategies" description="Four ways to get paid while you wait: earn while holding, waiting to sell, waiting to buy, or auto-accumulating SOL, BTC and ETH on Solana.">
+  <div class="industries">
+    <SubHero title={hero.title} text={hero.text} scrollButton />
+    <SubHeroFigure width={1344} height={768} label="Diagram: how a price target pays you. A SOL price chart rising toward a $250 target while income is paid upfront; if SOL reaches $250 you sell at $250 and keep the income, if it stays below you keep your SOL, the income, and can set a new target.">
+      <StrategiesDiagram class="sub-hero-image__svg" aria-hidden="true" />
+    </SubHeroFigure>
+    <h2 class="industries-title">{sectionTitle}</h2>
+    <section class="industry-section sticky-stack">
+      {strategies.map((strategy) => (
+        <div class="industry-row-wrapper sticky-stack__item">
+          <div id={strategy.id} class="industry-row">
+            <div class="industry-row__nav">
+              <nav class="industry-nav" aria-label="Strategy navigation">
+                {strategies.map((item) => (
+                  <a
+                    href={`#${item.id}`}
+                    class:list={['industry-nav__item', { 'is-active': item.id === strategy.id }]}
+                    data-target={item.id}
+                  >
+                    {item.navLabel}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            <div class="industry-row__card">
+              <article class="industry-card flx-column">
+                <div class="industry-card__image">
+                  <img
+                    src={strategy.image.src}
+                    alt={strategy.image.alt}
+                    width={strategy.image.width}
+                    height={strategy.image.height}
+                    loading="lazy"
+                    decoding="async"
+                    class="industry-card__img"
+                  />
+                </div>
+                <h3 class="industry-card__title">{strategy.title}</h3>
+                <ul class="industry-card__services">
+                  {strategy.services.map((service) => (
+                    <>
+                      <li class="industry-card__service">{service}</li>
+                      <div class="industry-card__divider"></div>
+                    </>
+                  ))}
+                </ul>
+              </article>
+            </div>
+            <div class="industry-row__overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+      ))}
+    </section>
+    <CtaSection lines={cta.lines} href={cta.href} label={cta.label} />
+  </div>
+</Base>

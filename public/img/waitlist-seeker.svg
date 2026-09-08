@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#eaf3f9"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#043273"/>
+      <stop offset="1" stop-color="#075ace"/>
+    </linearGradient>
+    <linearGradient id="sol" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9945ff"/>
+      <stop offset="1" stop-color="#14f195"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#9945ff" stop-opacity=".28"/>
+      <stop offset=".6" stop-color="#13eafb" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#13eafb" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="32" cy="32" r="2.4" fill="#043273" fill-opacity=".08"/>
+    </pattern>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="url(#sol)" stroke-width="2"/>
+    </pattern>
+    <symbol id="wave" viewBox="0 0 353 182">
+      <path d="M14 96C70 40 160 8 250 14c40 3 75-2 98-8-18 46-73 80-143 78-65-2-125-10-191 12Z"/>
+      <path d="M8 172c56-56 146-88 236-82 40 3 76-2 104-8-18 46-80 88-150 86-66-2-124-18-190 4Z"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <ellipse cx="800" cy="520" rx="640" ry="420" fill="url(#glow)"/>
+  <rect x="200" y="140" width="1200" height="760" fill="url(#grid)" opacity=".16"/>
+  <path d="M0 900C300 800 600 980 1000 870S1450 800 1600 850V1000H0Z" fill="url(#g)" opacity=".16"/>
+  <rect x="640" y="180" width="320" height="660" rx="52" fill="#0b0f16"/>
+  <rect x="640" y="180" width="320" height="660" rx="52" fill="none" stroke="#2b313c" stroke-width="3"/>
+  <path d="M962 320v70M962 420v110" stroke="#1b202a" stroke-width="6" stroke-linecap="round"/>
+  <rect x="656" y="196" width="288" height="628" rx="40" fill="url(#screen)"/>
+  <use href="#wave" x="700" y="440" width="200" height="103" fill="#fcfcfc"/>
+  <rect x="700" y="640" width="200" height="14" rx="7" fill="#fcfcfc" fill-opacity=".3"/>
+  <rect x="740" y="672" width="120" height="14" rx="7" fill="#fcfcfc" fill-opacity=".18"/>
+  <rect x="700" y="740" width="200" height="44" rx="22" fill="#13eafb"/>
+  <circle cx="800" cy="220" r="8" fill="#0b0f16" stroke="#1e2530" stroke-width="3"/>
+  <circle cx="1120" cy="300" r="6" fill="#9945ff"/>
+  <circle cx="460" cy="720" r="5" fill="#14f195"/>
+  <circle cx="1180" cy="700" r="5" fill="#13eafb"/>
+</svg>

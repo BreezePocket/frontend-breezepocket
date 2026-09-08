@@ -10,7 +10,7 @@ const mailto = `mailto:${site.privacyEmail}?subject=${encodeURIComponent(copy.al
 <Base
   page="privacy-request"
   title="Submit a Privacy Request"
-  description="Exercise your California privacy rights by submitting a request to know, delete, correct, opt-out, or limit the use of your personal information."
+  description="Ask BreezePocket to access, correct or delete the personal information we hold about you, or exercise your California privacy rights."
 >
   <div class="privacy-request">
     <SubHero title={copy.heroTitle} text={copy.heroText} />
@@ -30,9 +30,6 @@ const mailto = `mailto:${site.privacyEmail}?subject=${encodeURIComponent(copy.al
             <a href={mailto}>{site.privacyEmail}</a>
             <br />
             <small>{copy.alternatives.emailNote}</small>
-          </li>
-          <li>
-            <strong>Mail:</strong> {site.legalName}, {site.address.oneLine}
           </li>
         </ul>
         <p class="form__disclaimer">

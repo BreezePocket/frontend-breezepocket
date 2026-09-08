@@ -413,7 +413,7 @@
     gap: 32px;
   }
 }
-.vectr-engine {
+.engine-section {
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -421,23 +421,23 @@
   max-width: 1400px;
   justify-self: flex-end;
 }
-.vectr-engine__content {
+.engine-section__content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
   width: 100%;
 }
-.vectr-engine__content_wrapper {
+.engine-section__content_wrapper {
   gap: var(--space-2xl);
 }
-.vectr-engine__text {
+.engine-section__text {
   display: flex;
   flex-direction: column;
   gap: 32px;
   max-width: 800px;
 }
-.vectr-engine__title {
+.engine-section__title {
   font-family: var(--font-ui);
   font-weight: 500;
   font-size: var(--text-lg);
@@ -446,32 +446,32 @@
   color: var(--color-text);
   margin: 0;
 }
-.vectr-engine__body {
+.engine-section__body {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
-.vectr-engine__body p {
+.engine-section__body p {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--color-text-muted);
   margin: 0 0 1.4em;
 }
-.vectr-engine__body p:last-child {
+.engine-section__body p:last-child {
   margin-bottom: 0;
 }
-.vectr-engine__features {
+.engine-section__features {
   display: flex;
   gap: 40px;
   width: 100%;
 }
-.vectr-engine__feature {
+.engine-section__feature {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 240px;
 }
-.vectr-engine__feature-title {
+.engine-section__feature-title {
   font-family: var(--font-ui);
   font-weight: 500;
   font-size: var(--text-lg);
@@ -480,48 +480,48 @@
   color: var(--color-text);
   margin: 0;
 }
-.vectr-engine__feature-desc {
+.engine-section__feature-desc {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--color-text-muted);
   margin: 0;
 }
 @media (max-width: 1200px) {
-  .vectr-engine__feature {
+  .engine-section__feature {
     flex: 1;
     width: auto;
   }
 }
 @media (max-width: 820px) {
-  .vectr-engine {
+  .engine-section {
     gap: 48px;
   }
-  .vectr-engine__content {
+  .engine-section__content {
     flex-direction: column-reverse;
     gap: 32px;
   }
-  .vectr-engine__text {
+  .engine-section__text {
     gap: 32px;
   }
-  .vectr-engine__title {
+  .engine-section__title {
     font-size: 24px;
     line-height: 1.1;
   }
-  .vectr-engine__body p {
+  .engine-section__body p {
     font-size: 16px;
   }
-  .vectr-engine__features {
+  .engine-section__features {
     flex-direction: column;
     gap: 40px;
   }
-  .vectr-engine__feature {
+  .engine-section__feature {
     width: 100%;
   }
-  .vectr-engine__feature-title {
+  .engine-section__feature-title {
     font-size: 24px;
     line-height: 1.1;
   }
-  .vectr-engine__feature-desc {
+  .engine-section__feature-desc {
     font-size: 16px;
   }
 }

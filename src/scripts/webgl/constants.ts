@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 
-/** Scene palette (the original bundle's colour table) plus the page background and building tints. */
+/** Scene palette: BreezePocket blues plus the page background and surface tints. */
 export const PALETTE = {
   main: 0xa7d0fb,
   floor: 0x94bbe5,
-  primary: 0x3932dc,
+  primary: 0x027bf6,
   redLines: 0xff4d67,
   blueLines: 0x0e94fb,
   pulse: 0x57cdff,
@@ -12,20 +12,27 @@ export const PALETTE = {
   building: 0xf2f6fa,
   pad: 0xa2c3e6,
   plaza: 0xf7fafd,
+  /** Token coins and accents. */
+  coin: 0xf6f9fc,
+  coinBlue: 0x027bf6,
+  coinCyan: 0x13eafb,
+  stable: 0x2fd6c9,
+  sell: 0xff4d67,
+  buy: 0x2fd6c9,
 } as const;
 
-/** One storey in world units; building heights are multiples of this. */
+/** One coin/storey in world units; stack heights are multiples of this. */
 export const STOREY = 4;
 
-/** District centres on the floor plane (Y is up). The camera path visits them in this order. */
+/** District centres on the floor plane (Y is up): holdings → sell target → buy target → accumulate. */
 export const AREAS = {
-  downtown: new THREE.Vector3(0, 0, 0),
-  plant: new THREE.Vector3(70, 0, -205),
-  windFarm: new THREE.Vector3(118, 0, -84),
-  campus: new THREE.Vector3(84, 0, 22),
+  holdings: new THREE.Vector3(0, 0, 0),
+  sell: new THREE.Vector3(70, 0, -205),
+  buy: new THREE.Vector3(118, 0, -84),
+  accumulate: new THREE.Vector3(84, 0, 22),
 } as const;
 
-/** Search-grid pad beside the wind-farm substation (fades in over TIMING.grid). */
+/** Price-grid pad beside the buy-target chart (fades in over TIMING.grid). */
 export const GRID_CENTRE = new THREE.Vector3(160, 0, -118);
 export const GRID_SIZE = 26;
 

@@ -7,7 +7,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "deploy": "astro build && wrangler pages deploy",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami"
   },
   "dependencies": {
     "astro": "^5.12.0",
@@ -18,6 +21,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@types/three": "^0.178.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wrangler": "^4.129.1"
   }
 }

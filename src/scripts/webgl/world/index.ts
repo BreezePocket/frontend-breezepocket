@@ -1,29 +1,18 @@
 import * as THREE from 'three';
 import { InstanceBatch, createRandom, createSurfaceMaterial } from '../batch';
 import { AREAS, PALETTE, TIMING } from '../constants';
-import type { BuildContext } from './types';
-import { buildDowntown } from './downtown';
-import { buildPlant } from './plant';
-import { buildWindFarm } from './windfarm';
-import { buildCampus } from './campus';
-import { People, type PersonSpot } from './people';
-import { Smoke, createRadialTexture } from './smoke';
+import type { BuildContext, WorldState } from './types';
+import { buildHoldings } from './holdings';
+import { buildSellTarget, buildBuyTarget } from './targets';
+import { buildAccumulate } from './accumulate';
 import { Network } from './network';
-import { createSpot } from './lines';
+import { createRadialTexture, createSpot } from './lines';
+
+export type { WorldState } from './types';
 
 export interface WorldOptions {
+  /** Reserved for lighter builds on small devices. */
   mobile: boolean;
-}
-
-export interface WorldState {
-  /** Smoothed camera progress. */
-  progress: number;
-  /** Raw scroll target (0 while the page rests on the hero). */
-  targetProgress: number;
-  /** Seconds since the scene started (pauses with the loop). */
-  time: number;
-  /** Active flow step 0..3. */
-  section: number;
 }
 
 export interface World {
@@ -33,10 +22,10 @@ export interface World {
 }
 
 const SPOTS: Array<{ centre: THREE.Vector3; size: number }> = [
-  { centre: AREAS.downtown, size: 100 },
-  { centre: AREAS.plant, size: 140 },
-  { centre: new THREE.Vector3(AREAS.windFarm.x + 10, 0, AREAS.windFarm.z - 10), size: 150 },
-  { centre: new THREE.Vector3(AREAS.campus.x - 10, 0, AREAS.campus.z - 10), size: 140 },
+  { centre: AREAS.holdings, size: 100 },
+  { centre: AREAS.sell, size: 140 },
+  { centre: new THREE.Vector3(AREAS.buy.x + 10, 0, AREAS.buy.z - 10), size: 150 },
+  { centre: new THREE.Vector3(AREAS.accumulate.x - 10, 0, AREAS.accumulate.z - 10), size: 140 },
 ];
 const SPOT_OPACITY = 0.12;
 const SEED = 20240907;
@@ -49,14 +38,13 @@ export function buildWorld(options: WorldOptions): World {
   const surface = createSurfaceMaterial();
   const boxes = new InstanceBatch(new THREE.BoxGeometry(1, 1, 1), surface);
   const cylinders = new InstanceBatch(new THREE.CylinderGeometry(0.5, 0.5, 1, 16), surface);
-  const spots: PersonSpot[] = [];
-  const ctx: BuildContext = { group, boxes, cylinders, people: spots, random, surface };
+  const ctx: BuildContext = { group, boxes, cylinders, random, surface };
 
-  buildDowntown(ctx);
-  const { emitters } = buildPlant(ctx);
-  const turbines = buildWindFarm(ctx);
-  const { emblem } = buildCampus(ctx);
-  group.add(boxes.build('boxes'), cylinders.build('cylinders'), turbines.group);
+  buildHoldings(ctx);
+  const sell = buildSellTarget(ctx);
+  const buy = buildBuyTarget(ctx);
+  const { emblem } = buildAccumulate(ctx);
+  group.add(boxes.build('boxes'), cylinders.build('cylinders'));
 
   const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(3000, 3000),
@@ -67,13 +55,7 @@ export function buildWorld(options: WorldOptions): World {
   floor.name = 'floor';
   group.add(floor);
 
-  const peopleMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.main, roughness: 0.8, metalness: 0 });
-  const people = new People(spots, peopleMaterial, random);
-  group.add(people.mesh);
-
   const radial = createRadialTexture();
-  const smoke = new Smoke(radial, emitters, random, options.mobile ? 6 : 9);
-  group.add(smoke.group);
 
   const network = new Network(random);
   group.add(network.group);
@@ -86,9 +68,8 @@ export function buildWorld(options: WorldOptions): World {
   return {
     group,
     update(dt, state) {
-      turbines.update(dt);
-      people.update(state.time);
-      smoke.update(dt);
+      sell.update(dt, state);
+      buy.update(dt, state);
       network.update(dt, state);
 
       logoRatio = THREE.MathUtils.clamp(logoRatio + 2 * dt * (state.progress >= TIMING.emblem ? 1 : -1), 0, 1);
@@ -106,9 +87,6 @@ export function buildWorld(options: WorldOptions): World {
       }
     },
     dispose() {
-      turbines.dispose();
-      people.dispose();
-      smoke.dispose();
       network.dispose();
       radial.dispose();
       const seen = new Set<THREE.BufferGeometry | THREE.Material>();

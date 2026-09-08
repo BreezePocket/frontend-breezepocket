@@ -2,16 +2,19 @@
 import '@/styles/pages/mission.css';
 import Base from '@/layouts/Base.astro';
 import SubHero from '@/components/SubHero.astro';
-import SubHeroImage from '@/components/SubHeroImage.astro';
+import SubHeroFigure from '@/components/SubHeroFigure.astro';
+import MissionDiagram from '@/assets/mission-diagram.svg';
 import MissionBridge from '@/components/MissionBridge.astro';
-import { missionHero, missionSubSection, friction, engine, outcome, missionBridge } from '@/data/mission';
+import { missionHero, missionSubSection, problem, engine, outcome, missionBridge } from '@/data/mission';
 
-const drawerItems = [friction, engine, outcome];
+const drawerItems = [problem, engine, outcome];
 ---
-<Base page="mission" title="Our Mission" description="We convert time from a liability into a competitive advantage.">
+<Base page="mission" title="Our Mission" description="Why BreezePocket exists: idle crypto should pay. Name a price, get paid while you wait, and let the market come to you.">
   <div class="mission">
     <SubHero title={missionHero.title} text={missionHero.text} scrollButton />
-    <SubHeroImage src={missionHero.image.src} alt={missionHero.image.alt} width={missionHero.image.width} height={missionHero.image.height} />
+    <SubHeroFigure width={1344} height={768} label="Diagram: the same coins, two ways to wait. Waiting on your own: SOL sits in the wallet with no income. Waiting with BreezePocket: SOL stays yours, income is paid upfront, and the target fills at your price or you keep your coins. Steps: deposit, name a price, get paid upfront, filled or keep your coins.">
+      <MissionDiagram class="sub-hero-image__svg" aria-hidden="true" />
+    </SubHeroFigure>
 
     <section class="sub-section">
       <div class="sub-section__header">
@@ -46,13 +49,13 @@ const drawerItems = [friction, engine, outcome];
               {index === 0 && (
                 <div class="accordion-drawer-item__layout">
                   <div class="section-image accordion-drawer-item__image">
-                    <img src={friction.image.src} alt={friction.image.alt} loading="lazy" decoding="async" width={friction.image.width} height={friction.image.height} />
+                    <img src={problem.image.src} alt={problem.image.alt} loading="lazy" decoding="async" width={problem.image.width} height={problem.image.height} />
                   </div>
                   <div class="accordion-drawer-item__body">
-                    <h3 class="accordion-drawer-item__subtitle">{friction.subtitle}</h3>
-                    <p class="accordion-drawer-item__description">{friction.description}</p>
+                    <h3 class="accordion-drawer-item__subtitle">{problem.subtitle}</h3>
+                    <p class="accordion-drawer-item__description">{problem.description}</p>
                     <div class="accordion-drawer-item__bullets">
-                      {friction.bullets.map((bullet) => (
+                      {problem.bullets.map((bullet) => (
                         <div class="accordion-drawer-item__bullet">
                           <h4>{bullet.title}</h4>
                           <p>{bullet.text}</p>
@@ -63,25 +66,25 @@ const drawerItems = [friction, engine, outcome];
                 </div>
               )}
               {index === 1 && (
-                <div class="vectr-engine">
-                  <div class="vectr-engine__content">
-                    <div class="vectr-engine__content_wrapper flx-column">
-                      <div class="vectr-engine__text">
-                        <h3 class="vectr-engine__title">{engine.subtitle}</h3>
-                        <div class="vectr-engine__body">
+                <div class="engine-section">
+                  <div class="engine-section__content">
+                    <div class="engine-section__content_wrapper flx-column">
+                      <div class="engine-section__text">
+                        <h3 class="engine-section__title">{engine.subtitle}</h3>
+                        <div class="engine-section__body">
                           {engine.body.map((paragraph) => <p>{paragraph}</p>)}
                         </div>
                       </div>
-                      <div class="vectr-engine__features">
+                      <div class="engine-section__features">
                         {engine.features.map((feature) => (
-                          <article class="vectr-engine__feature">
-                            <h4 class="vectr-engine__feature-title">{feature.title}</h4>
-                            <p class="vectr-engine__feature-desc">{feature.text}</p>
+                          <article class="engine-section__feature">
+                            <h4 class="engine-section__feature-title">{feature.title}</h4>
+                            <p class="engine-section__feature-desc">{feature.text}</p>
                           </article>
                         ))}
                       </div>
                     </div>
-                    <div class="section-image vectr-engine__image">
+                    <div class="section-image engine-section__image">
                       <img src={engine.image.src} alt={engine.image.alt} loading="lazy" decoding="async" width={engine.image.width} height={engine.image.height} />
                     </div>
                   </div>

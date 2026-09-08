@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1344 768" font-family="Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="sd-band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13eafb" stop-opacity="0.28"/><stop offset="1" stop-color="#13eafb" stop-opacity="0.04"/></linearGradient>
+    <linearGradient id="sd-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#075ace"/><stop offset="1" stop-color="#1877f6"/></linearGradient>
+  </defs>
+  <rect width="1344" height="768" fill="#eaf3f9"/>
+  <text x="64" y="86" fill="#0b2350" letter-spacing="-1" style="font-size:40px;font-weight:500">How a price target pays you</text>
+  <text x="64" y="128" fill="#4a6a8f" style="font-size:21px">Example: you hold 10 SOL and would happily sell at $250.</text>
+
+  <!-- Chart card -->
+  <rect x="64" y="168" width="740" height="520" rx="24" fill="#fcfcfc"/>
+  <text x="104" y="212" fill="#4a6a8f" letter-spacing="1" style="font-size:16px;text-transform:uppercase">SOL PRICE</text>
+  <!-- axes -->
+  <line x1="104" y1="600" x2="764" y2="600" stroke="#dbe6ef" stroke-width="2"/>
+  <line x1="104" y1="256" x2="104" y2="600" stroke="#dbe6ef" stroke-width="2"/>
+  <!-- earn band between price today and target -->
+  <rect x="104" y="284" width="660" height="98" fill="url(#sd-band)"/>
+  <text x="124" y="322" fill="#0b2350" style="font-size:18px;font-weight:500">You earn while the price is on its way</text>
+  <text x="124" y="348" fill="#4a6a8f" style="font-size:16px">Income is paid upfront, the moment you set the target</text>
+  <!-- target line -->
+  <line x1="104" y1="284" x2="764" y2="284" stroke="#ff4d67" stroke-width="3" stroke-dasharray="12 10"/>
+  <rect x="612" y="240" width="152" height="34" rx="17" fill="#ff4d67"/>
+  <text x="688" y="263" fill="#ffffff" text-anchor="middle" style="font-size:16px;font-weight:500">Your target · $250</text>
+  <!-- price line -->
+  <polyline points="120,556 168,540 214,548 262,512 306,522 352,486 398,498 446,462 494,470 540,438 588,446 636,414 684,404" fill="none" stroke="url(#sd-line)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="684" cy="404" r="10" fill="#1877f6" stroke="#fcfcfc" stroke-width="4"/>
+  <rect x="560" y="422" width="150" height="34" rx="17" fill="#0b2350"/>
+  <text x="635" y="445" fill="#ffffff" text-anchor="middle" style="font-size:16px;font-weight:500">Today · $184</text>
+  <!-- steps -->
+  <g fill="#0b2350" style="font-size:16px">
+    <rect x="104" y="628" width="196" height="40" rx="20" fill="#eaf3f9"/><circle cx="126" cy="648" r="12" fill="#1877f6"/><text x="126" y="653" fill="#fff" text-anchor="middle" style="font-size:14px;font-weight:700">1</text><text x="148" y="653">Deposit 10 SOL</text>
+    <rect x="312" y="628" width="196" height="40" rx="20" fill="#eaf3f9"/><circle cx="334" cy="648" r="12" fill="#1877f6"/><text x="334" y="653" fill="#fff" text-anchor="middle" style="font-size:14px;font-weight:700">2</text><text x="356" y="653">Name $250</text>
+    <rect x="520" y="628" width="244" height="40" rx="20" fill="#eaf3f9"/><circle cx="542" cy="648" r="12" fill="#1877f6"/><text x="542" y="653" fill="#fff" text-anchor="middle" style="font-size:14px;font-weight:700">3</text><text x="564" y="653">Get paid upfront</text>
+  </g>
+
+  <!-- Outcome cards -->
+  <rect x="836" y="168" width="444" height="246" rx="24" fill="#fcfcfc"/>
+  <circle cx="872" cy="216" r="9" fill="#ff4d67"/>
+  <text x="894" y="223" fill="#0b2350" style="font-size:22px;font-weight:500">If SOL reaches $250</text>
+  <g fill="#4a6a8f" style="font-size:18px">
+    <text x="872" y="268">You sell your 10 SOL at $250,</text>
+    <text x="872" y="296">receive $2,500 in stablecoins,</text>
+    <text x="872" y="324">and keep the income you were paid.</text>
+  </g>
+  <rect x="872" y="352" width="168" height="34" rx="17" fill="#fff0f3"/><text x="956" y="375" fill="#c8324a" text-anchor="middle" style="font-size:15px;font-weight:500">Filled at your price</text>
+
+  <rect x="836" y="442" width="444" height="246" rx="24" fill="#fcfcfc"/>
+  <circle cx="872" cy="490" r="9" fill="#1877f6"/>
+  <text x="894" y="497" fill="#0b2350" style="font-size:22px;font-weight:500">If SOL stays below $250</text>
+  <g fill="#4a6a8f" style="font-size:18px">
+    <text x="872" y="542">You keep your 10 SOL,</text>
+    <text x="872" y="570">keep the income you were paid,</text>
+    <text x="872" y="598">and can set a new target.</text>
+  </g>
+  <rect x="872" y="626" width="196" height="34" rx="17" fill="#e8f1fe"/><text x="970" y="649" fill="#1462cc" text-anchor="middle" style="font-size:15px;font-weight:500">Coins stay with you</text>
+
+  <text x="64" y="736" fill="#7a92ad" style="font-size:16px">Illustrative example, not a forecast. Income depends on the market, the target and the date you choose.</text>
+</svg>

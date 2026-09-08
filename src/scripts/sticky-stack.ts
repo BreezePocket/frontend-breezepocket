@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 /**
- * "Sticky stack" used on the Industries and Apply pages.
+ * "Sticky stack" used on the Strategies and Waitlist pages.
  * Each `.sticky-stack__item` is `position: sticky; top: 0` (CSS). While the next item slides
  * over the current one, the current overlay darkens, and rows taller than the viewport scroll
  * their card content up so nothing is unreachable. Desktop only (>= 821px), matching the CSS.

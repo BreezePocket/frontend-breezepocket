@@ -2,7 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://www.vectrfl.com',
+  // Canonical origin. Override with PUBLIC_SITE_URL once a custom domain is attached.
+  site: process.env.PUBLIC_SITE_URL || 'https://breezepocket.pages.dev',
   output: 'static',
   trailingSlash: 'ignore',
   build: { inlineStylesheets: 'auto' },

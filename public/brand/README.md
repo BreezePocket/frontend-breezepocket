@@ -1,0 +1,3 @@
+- `logo-full.png` (806x321) — full lockup: the two-wave mark beside the "BreezePocket" wordmark; `logo-full-white.png` is the same lockup in white for dark backgrounds.
+- `logo-mark.png` (353x182) — the mark alone: two stacked blue-to-cyan wave shapes; `logo-mark-white.png` is the white version. Use for favicons, app headers and small spaces.
+- `logo-wordmark.png` — the "BreezePocket" wordmark alone, no mark; `logo-wordmark-white.png` is the white version.

@@ -1,15 +1,17 @@
-# frontend-breezepocket
+# BreezePocket — landing site
 
-A front-end clone of [vectrfl.com](https://www.vectrfl.com/) (Vectr, an industrial-staffing marketing site) rebuilt from scratch as a static Astro site. It reproduces the layout, motion design, and interactions of the original: the intro loader, the scroll-driven hero with a WebGL fly-over, the four-step "flow", sticky feature reveals, the FAQ, sub-page heroes, sticky card stacks, the mission accordion, the multi-step application modal, the crew-request form, and the legal pages.
+**Get paid while waiting for the crypto price you want.**
+
+BreezePocket is a Solana app for people who hold crypto and are happy to wait. Deposit SOL, BTC, ETH or USDC, name the price you would gladly sell (or buy) at, and earn income while the market gets there. If your price is reached, the trade fills at that price and you keep the income; if not, you keep your coins plus the income and can set a new target. Built on Solana, coming to the Seeker phone. This repository is the marketing site: a static Astro build with a scroll-driven WebGL hero, strategy pages, a waitlist flow, an early-access form and legal pages.
 
 ## Stack
 
 | Concern | Choice |
 | --- | --- |
 | Framework | [Astro 5](https://astro.build) (static output, no client framework) |
-| Styling | Plain CSS, ported from the original stylesheet with the original class names |
+| Styling | Plain CSS with design tokens in `src/styles/base.css` |
 | Motion | [GSAP](https://gsap.com) + ScrollTrigger, [Lenis](https://lenis.darkroom.engineering) smooth scroll |
-| 3D | [Three.js](https://threejs.org) procedural scene (no external models) |
+| 3D | [Three.js](https://threejs.org) procedural hero scene (no external models) |
 | Language | TypeScript (strict) |
 
 ## Scripts
@@ -25,68 +27,63 @@ npm run check    # astro check (TypeScript + template diagnostics)
 ## Project structure
 
 ```
-public/            static assets (icons, images, favicon, manifest, OG image)
+public/
+  brand/                   logo bitmaps (full lock-up, wordmark, mark; white variants)
+  icons/                   favicons, manifest icons, feature icons, UI glyphs
+  img/                     SVG illustrations used by the pages
+  share/ogp.png            Open Graph image
 src/
-  layouts/Base.astro       document shell: head/meta/JSON-LD, header, footer, transition overlay, loader (home)
+  layouts/Base.astro       document shell: meta/JSON-LD, header, footer, transition overlay, loader (home)
   components/              Header, Footer, Loader, LoaderLogo, Logo, PillButton, CtaSection, SubHero,
-                           SubHeroImage, MissionBridge, LegalLayout
-  pages/                   index, industries, our-mission, apply, request-crew, privacy, terms,
+                           SubHeroImage, MissionBridge, LegalLayout, SeekerMockup
+  pages/                   index, strategies, our-mission, waitlist, early-access, privacy, terms,
                            privacy-request, 404
   data/                    all copy and content, one file per page (+ site.ts for global values)
-  styles/
-    base.css               reset, design tokens (colours, type scale, spacing), utilities
-    components.css         shared component styles (buttons, header, mobile nav, footer, loader, forms…)
-    pages/*.css            per-page styles, imported by the page that needs them
+  styles/                  base.css (tokens/reset), components.css, pages/*.css
   scripts/
     main.ts                boots shared behaviour and lazy-loads the page module (data-page on <body>)
-    lenis.ts               smooth scroll + scroll helpers (lockScroll, scrollTo, onScroll)
-    header.ts              header reveal + mobile navigation drawer
-    transitions.ts         wipe overlay on internal navigation
-    footer.ts              footer wordmark reveal
-    sticky-stack.ts        sticky card stack (industries, apply)
-    sub-hero.ts            sub-page hero fold-away on scroll
-    pages/<page>.ts        page modules (home/ and apply/ have sub-modules)
+    lenis.ts, header.ts, transitions.ts, footer.ts, sticky-stack.ts, sub-hero.ts
+    pages/<page>.ts        page modules (home/ and waitlist/ have sub-modules)
     webgl/                 the hero scene (see below)
 ```
 
-Each page renders `<Base page="…">`; the `page` key selects both the body's `data-page` attribute and the script module that boots for it.
+Each page renders `<Base page="…">`; the `page` key sets `data-page` on the body and selects the script module that boots for it.
+
+## Editing content and brand
+
+- **Copy** lives in `src/data/*.ts`. Change text there rather than in the markup.
+- **Global values** (name, URL, emails, nav labels, CTA labels, footer links, logo paths) are in `src/data/site.ts`. The site URL is a placeholder until the domain is final.
+- **Logo**: master file exported to `public/brand/*.png`; regenerate the favicons and the OG image if the logo changes (they are derived from the mark and the full lock-up).
+- **Colours**: brand tokens are in `src/styles/base.css` (`--color-highlight` blue, `--color-dark` navy, `--color-text`). The WebGL palette is in `src/scripts/webgl/constants.ts`.
 
 ## How the home page works
 
-1. **Loader.** `pages/home.ts` locks scrolling, boots the WebGL scene, and reveals the page once the scene has rendered its first frames *and* at least 2.1 s have passed (hard fallback at 6 s). The header and hero animate in 700 ms later; scrolling unlocks at 2.2 s.
-2. **Hero fold.** The title and subtitle fold away in 3D over the first 40% of the viewport height (`pages/home/hero.ts`).
-3. **Flow steps.** The `.flow` section is 456svh tall with a sticky wrapper. `pages/home/flow.ts` maps scroll position to the active step using the original thresholds (`0.191`, `0.697`, `0.876`), fills the track bars, and emits a 0–1 *camera progress* value to the scene. Clicking a step header scrolls to it.
-4. **Features.** On desktop the 400vh `.features` section pins its content and reveals the four cards with overlapping windows as you scroll (`pages/home/features.ts`).
-5. **FAQ.** Single-open accordion animated with `max-height` (`pages/home/faq.ts`).
+1. **Loader** — `pages/home.ts` locks scrolling, boots the WebGL scene and reveals the page once the scene has rendered its first frames and at least 2.1 s have passed (hard fallback at 6 s).
+2. **Hero fold** — the title and subtitle fold away in 3D over the first 40% of the viewport height.
+3. **Flow steps** — the `.flow` section maps scroll position to the four steps (pick your asset, name your price, get paid while you wait, filled or free to go again) and feeds a 0–1 progress value to the scene camera.
+4. **Features** — the pinned `.features` section reveals the four strategies as you scroll.
+5. **Solana / Seeker** — `SeekerMockup.astro` renders a CSS-only phone with the app screen.
+6. **FAQ** — single-open accordion.
 
 ## The WebGL scene
 
-`src/scripts/webgl/` builds a low-poly world from primitives: a downtown cluster, a power plant with cooling towers and smoke, a wind farm with spinning turbines, and a data campus, linked by red routes and blue signal lines with travelling pulses. The camera flies over the districts as the home page scrolls.
+`src/scripts/webgl/` builds a low-poly world from primitives: a plaza of token stacks (holdings), a rising price chart with a glowing sell target, a dipping chart with a buy target beside a price grid, and rows of growing coin stacks with the wave emblem (accumulation), linked by route lines with travelling pulses. The camera flies from a wide hero view into each district as the page scrolls.
 
-- **Contract:** `webgl/index.ts` (`createScene(mount)` → `setProgress`, `setSection`, `playEntrance`, `setPaused`, `ready`, `destroy`).
-- **Camera:** `webgl/camera.ts` — edit `KEYFRAMES` (`progress`, `target`, `azimuth`, `pitch`, `distance`) to retune the flight; positions are threaded through centripetal Catmull-Rom splines and smoothed with a critically damped spring.
-- **World:** `webgl/constants.ts` holds the palette, district centres (`AREAS`), and reveal windows (`TIMING`); each district lives in `webgl/world/*.ts`.
-- **Rendering:** transparent canvas over the page colour, fog colour pre-compensated for ACES tone mapping so the horizon dissolves into the page, PCF soft shadows that follow the look-at point, and desktop-only bloom for the pulses (automatically disabled if unsupported).
-- In dev builds `window.__heroScene` exposes the handle plus a `step(dt)` method for debugging.
+- **Contract**: `webgl/index.ts` (`createScene(mount)` → `setProgress`, `setSection`, `playEntrance`, `setPaused`, `ready`, `destroy`).
+- **Camera**: `webgl/camera.ts` — edit `KEYFRAMES` (`progress`, `target`, `azimuth`, `pitch`, `distance`).
+- **World**: `webgl/constants.ts` holds the palette, district centres (`AREAS`) and reveal windows (`TIMING`); districts live in `webgl/world/{holdings,targets,accumulate}.ts`.
+- In dev builds `window.__heroScene` exposes the handle plus `step(dt)` for debugging.
 
 Reduced-motion users get the page without the scene and without smooth scrolling.
 
-## Copy and content
-
-All text lives in `src/data/*.ts`. Headings, labels, and navigation match the original site; paragraph copy (descriptions, FAQ answers, mission/apply text, legal pages, disclaimers) was rewritten in original words. Edit the data files to change content without touching markup.
-
 ## Forms
 
-- **Apply modal** (`/apply`) posts `multipart/form-data` to `POST /api/apply`.
-- **Request crews** (`/request-crew`) posts JSON to `POST /api/request-crew`.
+- **Waitlist modal** (`/waitlist`) posts `multipart/form-data` to `POST /api/waitlist`.
+- **Early access** (`/early-access`) posts JSON to `POST /api/early-access`.
 
-This static build ships no backend: a `404`/`405` from those endpoints is treated as "not configured" and the success state is still shown (with a console warning). To wire a backend, add a serverless function or an Astro adapter with endpoints at those paths that accept the payloads produced in `src/scripts/pages/apply/modal.ts` and `src/scripts/pages/request-crew.ts`.
+No backend ships with this static build: a `404`/`405` from those endpoints is treated as "not configured" and the success state is still shown (with a console warning). Wire a serverless function or an Astro adapter at those paths to receive the payloads. Drafts are kept in `sessionStorage` (waitlist) and `localStorage` (early access) until submitted.
 
-Drafts are kept in `sessionStorage` (apply) and `localStorage` (request crews) until submitted.
+## Notes
 
-## Before publishing
-
-- The **name, logo, icons, and photographs** belong to the original site and were used here for fidelity only. Replace them (`public/`, `src/components/Logo.astro`, `src/components/LoaderLogo.astro`, `src/data/site.ts`) before any public use.
-- The site URL, organisation details, and JSON-LD in `src/data/site.ts` and `src/layouts/Base.astro` still describe the original company.
-- The footer credit link is data-driven (`site.credit`).
-- Fonts load from Google Fonts (Roboto). The original references a licensed typeface that is not used here.
+- Yield figures shown in the app mockup are illustrative placeholders, not live data.
+- The legal pages are generic templates and need review by counsel before launch.

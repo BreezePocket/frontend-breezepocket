@@ -128,16 +128,16 @@ textarea {
   --color-bg: #fcfcfc;
   --color-bg-alt: #d9e8f1;
   --color-bg-muted: #eff4f4;
-  --color-highlight: #3932dc;
-  --color-dark: #050419;
-  --color-dark-alt: #373647;
-  --color-text: #050419;
+  --color-highlight: #1877f6;
+  --color-dark: #06173f;
+  --color-dark-alt: #1a2d5a;
+  --color-text: #0b2350;
   --color-text-light: #fcfcfc;
   --color-text-muted: #585765;
   --color-text-disabled: #8c8c95;
   --color-text-subtle: #b2b1b8;
   --color-border: #e6e6e8;
-  --color-border-dark: #373647;
+  --color-border-dark: #1a2d5a;
   --font-ui: "Roboto", sans-serif;
   --font-body: "Roboto", sans-serif;
   --text-xs: 12px;
@@ -180,7 +180,7 @@ textarea {
   }
 }
 ::selection {
-  background: #3932dc;
+  background: #1877f6;
   color: #fff;
 }
 .relative {

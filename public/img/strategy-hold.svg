@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#eaf3f9"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#027bf6" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#13eafb" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cf" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#d0e1eb"/>
+    </radialGradient>
+    <pattern id="dots" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="32" cy="32" r="2.4" fill="#043273" fill-opacity=".08"/>
+    </pattern>
+    <symbol id="coin" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="url(#cf)" stroke="#043273" stroke-width="4"/>
+      <circle cx="50" cy="50" r="33" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <path d="M0 780C300 740 600 700 800 650S1300 520 1600 470V1000H0Z" fill="url(#g)" opacity=".14"/>
+  <path d="M0 880C350 830 700 790 1000 720S1400 620 1600 600V1000H0Z" fill="url(#g)" opacity=".2"/>
+  <ellipse cx="800" cy="666" rx="200" ry="30" fill="#043273" fill-opacity=".07"/>
+  <path d="M660 474V650a140 46 0 0 0 280 0V474Z" fill="#fcfcfc"/>
+  <g fill="none" stroke="#043273" stroke-width="5" stroke-linecap="round">
+    <path d="M660 474V650M940 474V650"/>
+    <path d="M660 518a140 46 0 0 0 280 0M660 562a140 46 0 0 0 280 0M660 606a140 46 0 0 0 280 0M660 650a140 46 0 0 0 280 0"/>
+  </g>
+  <ellipse cx="800" cy="474" rx="140" ry="46" fill="url(#cf)" stroke="#043273" stroke-width="5"/>
+  <ellipse cx="800" cy="474" rx="92" ry="30" fill="none" stroke="#027bf6" stroke-width="3.5" stroke-opacity=".6"/>
+  <g stroke="url(#g)" stroke-width="6" stroke-linecap="round">
+    <path d="M1000 470v-24M988 458h24"/>
+    <path d="M1080 400v-32M1064 384h32"/>
+    <path d="M1160 320v-40M1140 300h40"/>
+  </g>
+  <text x="1200" y="311" font-family="Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="500" fill="#027bf6">income</text>
+  <use href="#coin" x="400" y="330" width="70" height="70"/>
+  <circle cx="1260" cy="520" r="6" fill="#13eafb"/>
+  <circle cx="520" cy="560" r="5" fill="#027bf6"/>
+</svg>

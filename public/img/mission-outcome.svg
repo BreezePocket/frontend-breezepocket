@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#eaf3f9"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <radialGradient id="cf" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#d0e1eb"/>
+    </radialGradient>
+    <linearGradient id="gv" gradientUnits="userSpaceOnUse" x1="0" y1="190" x2="0" y2="80">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="16" r="1.4" fill="#043273" fill-opacity=".09"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <rect width="400" height="400" fill="url(#dots)"/>
+  <path d="M0 340C80 310 160 360 260 330S360 300 400 310V400H0Z" fill="url(#g)" opacity=".16"/>
+  <ellipse cx="170" cy="300" rx="120" ry="14" fill="#043273" fill-opacity=".07"/>
+  <circle cx="212" cy="216" r="66" fill="url(#cf)" stroke="#043273" stroke-width="3"/>
+  <circle cx="212" cy="216" r="47" fill="none" stroke="#027bf6" stroke-width="2.5" stroke-opacity=".55"/>
+  <circle cx="130" cy="226" r="66" fill="url(#cf)" stroke="#043273" stroke-width="3"/>
+  <circle cx="130" cy="226" r="47" fill="none" stroke="#027bf6" stroke-width="2.5" stroke-opacity=".55"/>
+  <path d="M296 190V80" stroke="url(#gv)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M270 106 296 80 322 106" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M338 150v-20M328 140h20" stroke="#13eafb" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="130" r="3" fill="#027bf6"/>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#eaf3f9"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#027bf6" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#13eafb" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cf" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#d0e1eb"/>
+    </radialGradient>
+    <pattern id="dots" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="32" cy="32" r="2.4" fill="#043273" fill-opacity=".08"/>
+    </pattern>
+    <symbol id="coin" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="url(#cf)" stroke="#043273" stroke-width="4"/>
+      <circle cx="50" cy="50" r="33" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <path d="M0 860C300 760 600 940 1000 830S1450 760 1600 810V1000H0Z" fill="url(#g)" opacity=".14"/>
+  <path d="M0 930C350 840 700 990 1100 900S1450 850 1600 890V1000H0Z" fill="url(#g)" opacity=".2"/>
+  <path d="M240 760H1360" stroke="#043273" stroke-width="3" stroke-linecap="round" stroke-opacity=".18"/>
+  <path d="M300 700C380 690 420 600 500 610S620 660 700 560S820 520 900 470S1050 420 1130 340V760H300Z" fill="url(#fade)"/>
+  <path d="M300 700C380 690 420 600 500 610S620 660 700 560S820 520 900 470S1050 420 1130 340" fill="none" stroke="#043273" stroke-width="5" stroke-linecap="round"/>
+  <path d="M240 340H1360" stroke="#027bf6" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 16"/>
+  <rect x="1230" y="300" width="130" height="60" rx="30" fill="#027bf6"/>
+  <text x="1295" y="351" font-family="Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#fcfcfc" text-anchor="middle">$250</text>
+  <circle cx="1130" cy="340" r="34" fill="none" stroke="#ff4d67" stroke-width="3" stroke-opacity=".35"/>
+  <circle cx="1130" cy="340" r="16" fill="#ff4d67" stroke="#fcfcfc" stroke-width="6"/>
+  <use href="#coin" x="1290" y="520" width="90" height="90"/>
+  <use href="#coin" x="360" y="400" width="60" height="60"/>
+</svg>

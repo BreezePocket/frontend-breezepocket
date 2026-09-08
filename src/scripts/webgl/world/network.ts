@@ -22,10 +22,10 @@ interface RouteSpec {
   pulseSpeed: number;
 }
 
-const A = AREAS.downtown;
-const B = AREAS.plant;
-const C = AREAS.windFarm;
-const D = AREAS.campus;
+const A = AREAS.holdings;
+const B = AREAS.sell;
+const C = AREAS.buy;
+const D = AREAS.accumulate;
 const at = (base: THREE.Vector3, dx: number, dz: number) => P(base.x + dx, base.z + dz);
 const ROUTES: RouteSpec[] = [
   {

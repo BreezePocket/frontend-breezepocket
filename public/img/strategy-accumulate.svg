@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#eaf3f9"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#027bf6"/>
+      <stop offset="1" stop-color="#13eafb"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#027bf6" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#13eafb" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cf" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#d0e1eb"/>
+    </radialGradient>
+    <pattern id="dots" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="32" cy="32" r="2.4" fill="#043273" fill-opacity=".08"/>
+    </pattern>
+    <symbol id="coin" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="url(#cf)" stroke="#043273" stroke-width="4"/>
+      <circle cx="50" cy="50" r="33" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <path d="M0 860C300 760 600 940 1000 830S1450 760 1600 810V1000H0Z" fill="url(#g)" opacity=".14"/>
+  <path d="M0 930C350 840 700 990 1100 900S1450 850 1600 890V1000H0Z" fill="url(#g)" opacity=".2"/>
+  <path d="M260 740H1340" stroke="#043273" stroke-width="3" stroke-linecap="round" stroke-opacity=".18"/>
+  <path d="M310 674V700a70 24 0 0 0 140 0V674Z" fill="#fcfcfc"/>
+  <path d="M310 674V700M450 674V700M310 700a70 24 0 0 0 140 0" fill="none" stroke="#043273" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="380" cy="674" rx="70" ry="24" fill="url(#cf)" stroke="#043273" stroke-width="5"/>
+  <ellipse cx="380" cy="674" rx="44" ry="15" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+  <path d="M590 648V700a70 24 0 0 0 140 0V648Z" fill="#fcfcfc"/>
+  <path d="M590 648V700M730 648V700M590 674a70 24 0 0 0 140 0M590 700a70 24 0 0 0 140 0" fill="none" stroke="#043273" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="660" cy="648" rx="70" ry="24" fill="url(#cf)" stroke="#043273" stroke-width="5"/>
+  <ellipse cx="660" cy="648" rx="44" ry="15" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+  <path d="M870 622V700a70 24 0 0 0 140 0V622Z" fill="#fcfcfc"/>
+  <path d="M870 622V700M1010 622V700M870 648a70 24 0 0 0 140 0M870 674a70 24 0 0 0 140 0M870 700a70 24 0 0 0 140 0" fill="none" stroke="#043273" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="940" cy="622" rx="70" ry="24" fill="url(#cf)" stroke="#043273" stroke-width="5"/>
+  <ellipse cx="940" cy="622" rx="44" ry="15" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+  <path d="M1150 596V700a70 24 0 0 0 140 0V596Z" fill="#fcfcfc"/>
+  <path d="M1150 596V700M1290 596V700M1150 622a70 24 0 0 0 140 0M1150 648a70 24 0 0 0 140 0M1150 674a70 24 0 0 0 140 0M1150 700a70 24 0 0 0 140 0" fill="none" stroke="#043273" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="1220" cy="596" rx="70" ry="24" fill="url(#cf)" stroke="#043273" stroke-width="5"/>
+  <ellipse cx="1220" cy="596" rx="44" ry="15" fill="none" stroke="#027bf6" stroke-width="3" stroke-opacity=".6"/>
+  <path d="M380 580C520 300 1080 250 1230 460" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 18"/>
+  <path d="M1229 426 1230 460 1197 450" fill="none" stroke="#13eafb" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="800" cy="318" r="46" fill="#fcfcfc" stroke="#043273" stroke-width="4"/>
+  <path d="M820.7 310.5A22 22 0 1 1 803.8 296.3" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M791.4 303.3 803.8 296.3 794.6 285.5" fill="none" stroke="#13eafb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

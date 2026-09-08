@@ -1,0 +1,104 @@
+---
+import '@/styles/pages/early-access.css';
+import Base from '@/layouts/Base.astro';
+import PillButton from '@/components/PillButton.astro';
+import { earlyAccess as copy } from '@/data/early-access';
+
+const { fields, disclaimer } = copy;
+const textFields = [
+  { name: 'firstName', type: 'text', ...fields.firstName },
+  { name: 'lastName', type: 'text', ...fields.lastName },
+] as const;
+const fullFields = [
+  { name: 'organisation', type: 'text', ...fields.organisation },
+  { name: 'workEmail', type: 'email', ...fields.workEmail },
+  { name: 'telegram', type: 'text', ...fields.telegram },
+] as const;
+---
+<Base page="early-access" title="Get Early Access" description="Early access to BreezePocket for teams, treasuries and funds: put idle SOL, BTC and ETH to work with price targets your team sets.">
+  <div class="request-crew">
+    <div class="request-crew__left">
+      <h1 class="request-crew__title">{copy.title}</h1>
+      <div class="request-crew__description">
+        {copy.description.map((line) => (line ? <p>{line}</p> : <p>&nbsp;</p>))}
+      </div>
+    </div>
+    <div class="request-crew__right">
+      <div class="request-crew__form-wrapper">
+        <form class="form" id="early-access-form" novalidate>
+          <div class="form__row">
+            {
+              textFields.map((f) => (
+                <div class="form__field">
+                  <label class="form__label" for={f.name}>
+                    {' '}{f.label} <span class="form__required"> *</span>
+                  </label>
+                  <input
+                    type={f.type}
+                    id={f.name}
+                    name={f.name}
+                    class="form__input"
+                    placeholder=""
+                    required
+                    autocomplete={f.name === 'firstName' ? 'given-name' : 'family-name'}
+                    aria-describedby={`${f.name}-error`}
+                    data-error-message
+                  />
+                  <span class="form__error" id={`${f.name}-error`} data-field-error aria-live="polite"></span>
+                </div>
+              ))
+            }
+          </div>
+          {
+            fullFields.map((f) => (
+              <div class="form__field form__field--full">
+                <label class="form__label" for={f.name}>
+                  {' '}{f.label} {f.required ? <span class="form__required"> *</span> : ' '}
+                </label>
+                <input
+                  type={f.type}
+                  id={f.name}
+                  name={f.name}
+                  class="form__input"
+                  placeholder=""
+                  required={f.required}
+                  autocomplete={f.name === 'organisation' ? 'organization' : f.name === 'workEmail' ? 'email' : 'off'}
+                  aria-describedby={`${f.name}-error`}
+                  data-error-message
+                />
+                <span class="form__error" id={`${f.name}-error`} data-field-error aria-live="polite"></span>
+              </div>
+            ))
+          }
+          <div class="form__field form__radio-group" role="radiogroup" aria-labelledby="profile-label" aria-describedby="profile-error">
+            <span class="form__label" id="profile-label"> {fields.profile.label} <span class="form__required"> *</span></span>
+            <div class="form__radio-options">
+              {
+                copy.profiles.map((opt) => (
+                  <label class="form__radio">
+                    <input type="radio" name="profile" value={opt.value} checked={'checked' in opt && opt.checked} />
+                    <span>{opt.label}</span>
+                  </label>
+                ))
+              }
+            </div>
+            <span class="form__error" id="profile-error" data-field-error aria-live="polite"></span>
+          </div>
+          <div class="form__field">
+            <div class="form__disclaimer-wrap">
+              <p class="form__disclaimer">
+                {' '}{disclaimer.text} <a href={disclaimer.linkHref}>{disclaimer.linkLabel}</a>.
+              </p>
+              <details class="form__disclaimer-details">
+                <summary>{disclaimer.readMore}</summary>
+                <span>{disclaimer.details}</span>
+              </details>
+            </div>
+          </div>
+          <p class="form__error" data-form-error role="alert" aria-live="polite"></p>
+          <PillButton type="submit" variant="dark" class="w-100">{copy.submitLabel}</PillButton>
+        </form>
+      </div>
+    </div>
+  </div>
+</Base>

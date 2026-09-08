@@ -30,12 +30,12 @@ export const ENTRANCE_DURATION = 2;
 const offset = (area: THREE.Vector3, dx: number, dz: number) => new THREE.Vector3(area.x + dx, 0, area.z + dz);
 
 export const KEYFRAMES: readonly CameraKeyframe[] = [
-  { progress: 0, target: offset(AREAS.downtown, -12, -62), azimuth: 32, pitch: 56, distance: 250 },
-  { progress: 0.2, target: offset(AREAS.downtown, 6, -6), azimuth: 32, pitch: 52, distance: 130 },
-  { progress: 0.5, target: offset(AREAS.plant, 4, -6), azimuth: 28, pitch: 52, distance: 170 },
-  { progress: 0.75, target: offset(AREAS.windFarm, 10, -14), azimuth: 24, pitch: 54, distance: 170 },
-  { progress: 0.9, target: offset(AREAS.campus, 4, -8), azimuth: 34, pitch: 54, distance: 170 },
-  { progress: 1, target: offset(AREAS.campus, 0, -20), azimuth: 40, pitch: 58, distance: 260 },
+  { progress: 0, target: offset(AREAS.holdings, -12, -62), azimuth: 32, pitch: 56, distance: 250 },
+  { progress: 0.2, target: offset(AREAS.holdings, 6, -6), azimuth: 32, pitch: 52, distance: 130 },
+  { progress: 0.5, target: offset(AREAS.sell, 4, -6), azimuth: 28, pitch: 52, distance: 170 },
+  { progress: 0.75, target: offset(AREAS.buy, 10, -14), azimuth: 24, pitch: 54, distance: 170 },
+  { progress: 0.9, target: offset(AREAS.accumulate, 4, -8), azimuth: 34, pitch: 54, distance: 170 },
+  { progress: 1, target: offset(AREAS.accumulate, 0, -20), azimuth: 40, pitch: 58, distance: 260 },
 ];
 
 export function keyframePosition(key: CameraKeyframe, out: THREE.Vector3): THREE.Vector3 {

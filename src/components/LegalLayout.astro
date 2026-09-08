@@ -38,7 +38,6 @@ const { title, text, navLabel, updated, sections, contactEmail } = Astro.props;
         ))}
         <div class="privacy-contact">
           <p>{site.legalName}</p>
-          <p>{site.address.oneLine}</p>
           <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
         </div>
       </div>

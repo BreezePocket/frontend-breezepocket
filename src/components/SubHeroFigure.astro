@@ -1,0 +1,16 @@
+---
+/** Full-width rounded hero figure beneath a SubHero, for inline SVG diagrams (slot). Same reveal as SubHeroImage. */
+interface Props {
+  width: number;
+  height: number;
+  label: string;
+}
+const { width, height, label } = Astro.props;
+---
+<div class="sub-hero-image__overflow">
+  <div class="sub-hero-image">
+    <div class="sub-hero-image__wrapper sub-hero-image__wrapper--figure" style={`aspect-ratio: ${width} / ${height}`} role="img" aria-label={label}>
+      <slot />
+    </div>
+  </div>
+</div>

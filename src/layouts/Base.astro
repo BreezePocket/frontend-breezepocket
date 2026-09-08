@@ -11,7 +11,7 @@ import { site } from '@/data/site';
  * `page` is exposed as `data-page` on <body> and selects which script module boots (see src/scripts/main.ts).
  */
 interface Props {
-  page: 'home' | 'industries' | 'mission' | 'apply' | 'request-crew' | 'privacy' | 'terms' | 'privacy-request' | 'not-found';
+  page: 'home' | 'strategies' | 'mission' | 'waitlist' | 'early-access' | 'privacy' | 'terms' | 'privacy-request' | 'not-found';
   title?: string;
   description?: string;
   noindex?: boolean;
@@ -29,18 +29,10 @@ const organizationLd = {
   name: site.name,
   legalName: site.legalName,
   url: site.url,
-  logo: `${site.url}/favicon.svg`,
+  logo: `${site.url}${site.logo.full.src}`,
   description: site.description,
   email: site.email,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: site.address.street,
-    addressLocality: site.address.city,
-    addressRegion: site.address.region,
-    postalCode: site.address.postal,
-    addressCountry: site.address.country,
-  },
-  contactPoint: { '@type': 'ContactPoint', email: site.email, contactType: 'customer service', areaServed: 'US', availableLanguage: 'English' },
+  sameAs: [] as string[],
 };
 const websiteLd = {
   '@context': 'https://schema.org',

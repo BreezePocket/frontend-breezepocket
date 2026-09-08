@@ -16,7 +16,7 @@ import { site } from '@/data/site';
     ))}
   </nav>
   <div class="footer__bottom">
-    <Logo fill="#FCFCFC" class="logo footer__logo" />
+    <div class="footer__logo-wrap"><Logo variant="wordmark" white class="footer__logo" /></div>
     <div class="footer__meta">
       <p class="footer__copyright">© {site.year} {site.legalName}</p>
       {site.footerLinks.map((link) => <a href={link.href} class="footer__privacy">{link.label}</a>)}
