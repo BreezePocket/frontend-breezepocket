@@ -1,0 +1,16 @@
+---
+import '@/styles/pages/privacy.css';
+import Base from '@/layouts/Base.astro';
+import LegalLayout from '@/components/LegalLayout.astro';
+import { privacyMeta, privacySections } from '@/data/privacy';
+---
+<Base page="privacy" title="Privacy Policy" description="Learn how Vectr collects, uses, and protects your personal information.">
+  <LegalLayout
+    title={privacyMeta.heroTitle}
+    text={privacyMeta.heroText}
+    navLabel={privacyMeta.navLabel}
+    updated={privacyMeta.updated}
+    sections={privacySections}
+    contactEmail={privacyMeta.contactEmail}
+  />
+</Base>

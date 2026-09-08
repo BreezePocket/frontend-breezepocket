@@ -1,0 +1,23 @@
+---
+/** Rounded CTA. Renders an <a> when `href` is given, otherwise a <button>. */
+interface Props {
+  href?: string;
+  variant?: 'dark' | 'glass' | 'light';
+  type?: 'button' | 'submit';
+  class?: string;
+  [key: string]: unknown;
+}
+const { href, variant = 'dark', type = 'button', class: className, ...rest } = Astro.props;
+const classes = ['pill-btn', `pill-btn--${variant}`, className];
+---
+{
+  href ? (
+    <a href={href} class:list={classes} {...rest}>
+      <span class="pill-btn-span"><slot /></span>
+    </a>
+  ) : (
+    <button type={type} class:list={classes} {...rest}>
+      <span class="pill-btn-span"><slot /></span>
+    </button>
+  )
+}

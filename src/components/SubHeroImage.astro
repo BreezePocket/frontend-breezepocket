@@ -1,0 +1,17 @@
+---
+/** Full-bleed rounded hero image that slides in beneath a SubHero. */
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+const { src, alt, width, height } = Astro.props;
+---
+<div class="sub-hero-image__overflow">
+  <div class="sub-hero-image">
+    <div class="sub-hero-image__wrapper" style={`aspect-ratio: ${width} / ${height}`}>
+      <img src={src} alt={alt} width={width} height={height} loading="eager" decoding="async" fetchpriority="high" class="sub-hero-image__img" />
+    </div>
+  </div>
+</div>

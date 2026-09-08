@@ -1,0 +1,44 @@
+---
+import '@/styles/pages/privacy.css';
+import Base from '@/layouts/Base.astro';
+import SubHero from '@/components/SubHero.astro';
+import { site } from '@/data/site';
+import { privacyRequest as copy } from '@/data/privacy-request';
+
+const mailto = `mailto:${site.privacyEmail}?subject=${encodeURIComponent(copy.alternatives.emailSubject)}`;
+---
+<Base
+  page="privacy-request"
+  title="Submit a Privacy Request"
+  description="Exercise your California privacy rights by submitting a request to know, delete, correct, opt-out, or limit the use of your personal information."
+>
+  <div class="privacy-request">
+    <SubHero title={copy.heroTitle} text={copy.heroText} />
+    <div class="privacy-request__layout">
+      <section class="privacy-request__intro">
+        <h2>{copy.intro.title}</h2>
+        <div>
+          {copy.intro.paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </section>
+      <aside class="privacy-request__alternatives">
+        <h2>{copy.alternatives.title}</h2>
+        <p>{copy.alternatives.text}</p>
+        <ul>
+          <li>
+            <strong>Email:</strong>
+            <a href={mailto}>{site.privacyEmail}</a>
+            <br />
+            <small>{copy.alternatives.emailNote}</small>
+          </li>
+          <li>
+            <strong>Mail:</strong> {site.legalName}, {site.address.oneLine}
+          </li>
+        </ul>
+        <p class="form__disclaimer">
+          <a href="/privacy">{copy.alternatives.disclaimerLabel}</a>
+        </p>
+      </aside>
+    </div>
+  </div>
+</Base>

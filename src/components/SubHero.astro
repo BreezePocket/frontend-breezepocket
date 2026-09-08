@@ -1,0 +1,35 @@
+---
+/**
+ * Page intro for sub pages: big title, optional scroll-down button, lead paragraph, and an
+ * optional slot rendered inside the body (used for the Apply page CTA).
+ * The `.show` class (added by page scripts) triggers the entrance animation.
+ */
+interface Props {
+  title: string; // may contain <br />
+  text?: string;
+  scrollButton?: boolean;
+  class?: string;
+}
+const { title, text, scrollButton = false, class: className } = Astro.props;
+---
+<section class:list={['sub-hero', className]}>
+  <h1 class="sub-hero__title" set:html={title} />
+  <div class="sub-hero__content">
+    {scrollButton && (
+      <div class="sub-hero__icon-wrapper">
+        <button class="sub-hero__icon flx-center js-scroll-down" type="button" aria-label="Scroll down">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+            <path d="M0.707031 0.707031L6.70738 6.70669L12.707 0.707031" stroke="#FCFCFC" stroke-width="2" stroke-linejoin="round"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+            <path d="M0.707031 0.707031L6.70738 6.70669L12.707 0.707031" stroke="#FCFCFC" stroke-width="2" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    )}
+    <div class="sub-hero__body">
+      {text && <p class="sub-hero__text">{text}</p>}
+      <slot />
+    </div>
+  </div>
+</section>

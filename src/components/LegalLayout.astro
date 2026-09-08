@@ -1,0 +1,47 @@
+---
+import SubHero from './SubHero.astro';
+import { site } from '@/data/site';
+import type { LegalSection } from '@/data/privacy';
+
+/**
+ * Shared body for the Privacy Policy and Terms of Service pages:
+ * sub-hero, sticky section nav (scroll-spy driven by src/scripts/pages/privacy.ts) and the sections.
+ */
+interface Props {
+  title: string;
+  text: string;
+  navLabel: string;
+  updated?: string;
+  sections: readonly LegalSection[];
+  contactEmail: string;
+}
+const { title, text, navLabel, updated, sections, contactEmail } = Astro.props;
+---
+<div class="privacy">
+  <SubHero title={title} text={text} />
+  <div class="privacy-layout">
+    <div class="privacy-layout__nav">
+      <nav class="privacy-nav" aria-label={navLabel}>
+        {sections.map((s) => (
+          <a href={`#${s.id}`} class="privacy-nav__item" data-target={s.id} set:html={s.nav} />
+        ))}
+      </nav>
+    </div>
+    <div class="privacy-layout__body">
+      <div class="privacy-sections">
+        {updated && <p class="privacy-sections__updated">{updated}</p>}
+        {sections.map((s) => (
+          <section id={s.id} class="privacy-section">
+            <h2 class="privacy-section__title" set:html={s.title} />
+            <div class="privacy-section__content" set:html={s.html} />
+          </section>
+        ))}
+        <div class="privacy-contact">
+          <p>{site.legalName}</p>
+          <p>{site.address.oneLine}</p>
+          <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+---
+import '@/styles/pages/mission.css';
+import Base from '@/layouts/Base.astro';
+import SubHero from '@/components/SubHero.astro';
+import SubHeroImage from '@/components/SubHeroImage.astro';
+import MissionBridge from '@/components/MissionBridge.astro';
+import { missionHero, missionSubSection, friction, engine, outcome, missionBridge } from '@/data/mission';
+
+const drawerItems = [friction, engine, outcome];
+---
+<Base page="mission" title="Our Mission" description="We convert time from a liability into a competitive advantage.">
+  <div class="mission">
+    <SubHero title={missionHero.title} text={missionHero.text} scrollButton />
+    <SubHeroImage src={missionHero.image.src} alt={missionHero.image.alt} width={missionHero.image.width} height={missionHero.image.height} />
+
+    <section class="sub-section">
+      <div class="sub-section__header">
+        <h2 class="sub-section__title">{missionSubSection.title}</h2>
+      </div>
+      <div class="sub-section__body">
+        <p>{missionSubSection.body}</p>
+      </div>
+    </section>
+
+    <section class="accordion-drawer">
+      {drawerItems.map((item, index) => (
+        <div class="accordion-drawer-item">
+          <button class="accordion-drawer-item__header flx space-between align-center" type="button" aria-expanded="false">
+            <div class="accordion-drawer-item__text flx">
+              <span class="accordion-drawer-item__number">
+                {item.number.split('').map((digit, digitIndex) => (
+                  <span class="accordion-drawer-item__digit" style={`--digit-index: ${digitIndex}`}>
+                    <span class="accordion-drawer-item__digit-default">{digit}</span>
+                    <span class="accordion-drawer-item__digit-hover" aria-hidden="true"> {digit} </span>
+                  </span>
+                ))}
+              </span>
+              <span class="accordion-drawer-item__title">{item.title}</span>
+            </div>
+            <span class="accordion-drawer-item__icon flx-center">
+              <img src="/icons/chevron-down-blue.svg" alt="" loading="lazy" aria-hidden="true" decoding="async" width="40" height="20" />
+            </span>
+          </button>
+          <div class="accordion-drawer-item__content">
+            <div class="accordion-drawer-item__content-inner">
+              {index === 0 && (
+                <div class="accordion-drawer-item__layout">
+                  <div class="section-image accordion-drawer-item__image">
+                    <img src={friction.image.src} alt={friction.image.alt} loading="lazy" decoding="async" width={friction.image.width} height={friction.image.height} />
+                  </div>
+                  <div class="accordion-drawer-item__body">
+                    <h3 class="accordion-drawer-item__subtitle">{friction.subtitle}</h3>
+                    <p class="accordion-drawer-item__description">{friction.description}</p>
+                    <div class="accordion-drawer-item__bullets">
+                      {friction.bullets.map((bullet) => (
+                        <div class="accordion-drawer-item__bullet">
+                          <h4>{bullet.title}</h4>
+                          <p>{bullet.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+              {index === 1 && (
+                <div class="vectr-engine">
+                  <div class="vectr-engine__content">
+                    <div class="vectr-engine__content_wrapper flx-column">
+                      <div class="vectr-engine__text">
+                        <h3 class="vectr-engine__title">{engine.subtitle}</h3>
+                        <div class="vectr-engine__body">
+                          {engine.body.map((paragraph) => <p>{paragraph}</p>)}
+                        </div>
+                      </div>
+                      <div class="vectr-engine__features">
+                        {engine.features.map((feature) => (
+                          <article class="vectr-engine__feature">
+                            <h4 class="vectr-engine__feature-title">{feature.title}</h4>
+                            <p class="vectr-engine__feature-desc">{feature.text}</p>
+                          </article>
+                        ))}
+                      </div>
+                    </div>
+                    <div class="section-image vectr-engine__image">
+                      <img src={engine.image.src} alt={engine.image.alt} loading="lazy" decoding="async" width={engine.image.width} height={engine.image.height} />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {index === 2 && (
+                <section class="outcome">
+                  <div class="section-image outcome__image">
+                    <img src={outcome.image.src} alt={outcome.image.alt} loading="lazy" decoding="async" width={outcome.image.width} height={outcome.image.height} />
+                  </div>
+                  <div class="outcome__content flx-column">
+                    <div class="outcome__header flx-column">
+                      <h3 class="outcome__title">{outcome.subtitle}</h3>
+                      <p class="outcome__subtitle">{outcome.lead}</p>
+                    </div>
+                    <div class="outcome__items">
+                      {outcome.items.map((entry) => (
+                        <div class="outcome-item flx-column">
+                          <span class="outcome-item__number">{entry.number}</span>
+                          <div class="outcome-item__text flx-column">
+                            <h4 class="outcome-item__title">{entry.title}</h4>
+                            <p class="outcome-item__description">{entry.text}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <MissionBridge lines={missionBridge.lines} text={missionBridge.text} ctas={missionBridge.ctas} />
+  </div>
+</Base>

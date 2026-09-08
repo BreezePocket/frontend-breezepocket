@@ -1,0 +1,126 @@
+---
+import Base from '@/layouts/Base.astro';
+import PillButton from '@/components/PillButton.astro';
+import CtaSection from '@/components/CtaSection.astro';
+import { hero, flowSteps, featuresTitle, features, standards, faqTitle, faq, cta } from '@/data/home';
+import '@/styles/pages/home.css';
+---
+<Base page="home">
+  <div class="top">
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">{hero.title.map((line) => <span>{line}</span>)}</h1>
+        <p class="hero__subtitle">
+          <span>{hero.subtitle[0]}<br class="sp" /></span>
+          <span>{hero.subtitle[1]}</span>
+        </p>
+      </div>
+      <div class="hero__scroll-btn">
+        <span><span class="hsbtn-in">{hero.scrollLabel}</span></span>
+      </div>
+    </section>
+    <div class="hero-spacer"></div>
+
+    <section class="flow">
+      <div class="flow__wrapper">
+        <div class="flow__steps">
+          {
+            flowSteps.map((step, i) => (
+              <div class="flow__step" data-step={i + 1}>
+                <div class="flow__header" role="button" tabindex="0">
+                  <div class="flow__number">
+                    <span>{step.number}</span>
+                  </div>
+                  <h3 class="flow__title">{step.title}</h3>
+                </div>
+                <div class="flow__body">
+                  <div class="flow__body-inner">
+                    <div class="flow__track">
+                      <div class="flow__track-bar">
+                        <div class="flow__track-fill"></div>
+                      </div>
+                    </div>
+                    <p class="flow__description" set:html={step.description} />
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="features__sticky">
+        <h2 class="features__title" set:html={featuresTitle} />
+        <div class="features__grid">
+          {
+            features.map((item) => (
+              <article class="feature-item">
+                <div class="feature-item__content">
+                  <div class="feature-item__icon">
+                    <img src={item.icon} alt={item.iconAlt} loading="lazy" decoding="async" width="96" height="96" />
+                  </div>
+                  <div class="feature-item__text">
+                    <h3 class="feature-item__title">{item.title}</h3>
+                    <p class="feature-item__description">{item.description}</p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="standards">
+      <div class="standards__container">
+        <div class="standards__image">
+          <img
+            src={standards.image.src}
+            alt={standards.image.alt}
+            width={standards.image.width}
+            height={standards.image.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="standards__content">
+          <h2 class="standards__title">{standards.title.map((line) => <span>{line}</span>)}</h2>
+          <p class="standards__description">{standards.description}</p>
+          <div class="flx">
+            <PillButton href={standards.cta.href} variant="dark">{standards.cta.label}</PillButton>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="faq__container">
+        <div class="faq__left">
+          <h2 class="faq__title">{faqTitle}</h2>
+        </div>
+        <div class="faq_split_bar"></div>
+        <div class="faq__right">
+          {
+            faq.map((item, i) => (
+              <div class:list={['faq-item', { 'faq-item--open': i === 0 }]}>
+                <button class="faq-item__header" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+                  <span class="faq-item__question">{item.question}</span>
+                  <span class="faq-item__icon">
+                    <img src="/icons/chevron-down.svg" alt="" loading="lazy" decoding="async" />
+                  </span>
+                </button>
+                <div class="faq-item__content">
+                  <p class="faq-item__answer">{item.answer}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <CtaSection lines={cta.lines} href={cta.href} label={cta.label} />
+  </div>
+</Base>

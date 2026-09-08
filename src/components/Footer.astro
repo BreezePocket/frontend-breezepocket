@@ -1,0 +1,26 @@
+---
+import Logo from './Logo.astro';
+import { site } from '@/data/site';
+---
+<footer class="footer">
+  <nav class="footer-nav" aria-label="Footer">
+    {site.footerNav.map((link) => (
+      <a href={link.href} class="footer-nav-btn">
+        <span class="footer-nav-btn__bg"></span>
+        <span class="footer-nav-btn__label">{link.label}</span>
+        <span class="footer-nav-btn__arrows" aria-hidden="true">
+          <img src="/icons/arrow-right.svg" alt="" class="footer-nav-btn__arrow footer-nav-btn__arrow--current" width="23" height="32" loading="lazy" />
+          <img src="/icons/arrow-right.svg" alt="" class="footer-nav-btn__arrow footer-nav-btn__arrow--next" width="23" height="32" loading="lazy" />
+        </span>
+      </a>
+    ))}
+  </nav>
+  <div class="footer__bottom">
+    <Logo fill="#FCFCFC" class="logo footer__logo" />
+    <div class="footer__meta">
+      <p class="footer__copyright">© {site.year} {site.legalName}</p>
+      {site.footerLinks.map((link) => <a href={link.href} class="footer__privacy">{link.label}</a>)}
+      <a href={site.credit.href} target="_blank" rel="noopener" class="footer__credit">{site.credit.label}</a>
+    </div>
+  </div>
+</footer>

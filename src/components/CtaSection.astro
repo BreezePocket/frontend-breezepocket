@@ -1,0 +1,20 @@
+---
+import PillButton from './PillButton.astro';
+/** Dark full-width call-to-action band. Title lines stack on desktop and flow inline on mobile. */
+interface Props {
+  lines: readonly string[];
+  subtitle?: string;
+  href?: string;
+  label?: string;
+}
+const { lines, subtitle, href, label } = Astro.props;
+---
+<section class="cta-section">
+  <h2 class="cta-section__title">{lines.map((line) => <span>{line}</span>)}</h2>
+  {subtitle && <p class="cta-section__subtitle">{subtitle}</p>}
+  <div class="flx">
+    <slot>
+      {href && label && <PillButton href={href} variant="light">{label}</PillButton>}
+    </slot>
+  </div>
+</section>

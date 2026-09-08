@@ -1,0 +1,116 @@
+---
+import '@/styles/base.css';
+import '@/styles/components.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Loader from '@/components/Loader.astro';
+import { site } from '@/data/site';
+
+/**
+ * Document shell shared by every page.
+ * `page` is exposed as `data-page` on <body> and selects which script module boots (see src/scripts/main.ts).
+ */
+interface Props {
+  page: 'home' | 'industries' | 'mission' | 'apply' | 'request-crew' | 'privacy' | 'terms' | 'privacy-request' | 'not-found';
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+const { page, title, description = site.description, noindex = false } = Astro.props;
+const fullTitle = title ? `${title} | ${site.name}` : site.name;
+const isHome = page === 'home';
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const ogImage = `${site.url}/share/ogp.png`;
+
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${site.url}/#organization`,
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  logo: `${site.url}/favicon.svg`,
+  description: site.description,
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.region,
+    postalCode: site.address.postal,
+    addressCountry: site.address.country,
+  },
+  contactPoint: { '@type': 'ContactPoint', email: site.email, contactType: 'customer service', areaServed: 'US', availableLanguage: 'English' },
+};
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.url}/#website`,
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  inLanguage: 'en-US',
+  publisher: { '@id': `${site.url}/#organization` },
+};
+---
+<!doctype html>
+<html lang="en-US" class="preload no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
+    <link rel="manifest" href="/icons/site.webmanifest" />
+    <link rel="mask-icon" href="/icons/favicon.svg" color="#050419" />
+    <meta name="theme-color" content={isHome ? '#d0e1eb' : '#ffffff'} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
+    <meta name="keywords" content={site.keywords} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.name} logo`} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en-US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={`${site.name} logo`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script is:inline>
+      document.documentElement.classList.remove('no-js');
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
+    <slot name="head" />
+  </head>
+  <body data-page={page} class:list={[{ 'is-home': isHome }]}>
+    <div class="transition-pages" aria-hidden="true"></div>
+    <div class="mobile-nav__overlay" aria-hidden="true"></div>
+    <Header isHome={isHome} />
+    <main data-page-view={page}>
+      <slot />
+      {isHome && <div id="app" aria-hidden="true"></div>}
+    </main>
+    <Footer />
+    {isHome && <Loader />}
+    <script>
+      import '@/scripts/main';
+    </script>
+  </body>
+</html>

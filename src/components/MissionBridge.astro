@@ -1,0 +1,39 @@
+---
+import LoaderLogo from './LoaderLogo.astro';
+import PillButton from './PillButton.astro';
+/**
+ * Centred statement block with the dashed orbit rings behind the emblem.
+ * Used at the end of the mission page and as the 404 page body.
+ */
+interface Props {
+  lines: readonly string[];
+  text: string; // may contain <br>
+  ctas: ReadonlyArray<{ label: string; href: string; variant: 'dark' | 'glass' | 'light' }>;
+  headingLevel?: 'h1' | 'h2';
+  show?: boolean;
+  maskId?: string;
+}
+const { lines, text, ctas, headingLevel = 'h2', show = false, maskId = 'bridge-arrow-mask' } = Astro.props;
+const Heading = headingLevel;
+---
+<section class:list={['mission-bridge', { show }]}>
+  <div class="mission-bridge__bg" aria-hidden="true">
+    <svg class="mission-bridge__ellipse mission-bridge__ellipse--outer" viewBox="0 0 1500 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <ellipse cx="750" cy="400" rx="749" ry="399"></ellipse>
+    </svg>
+    <svg class="mission-bridge__ellipse mission-bridge__ellipse--inner" viewBox="0 0 800 800" aria-hidden="true">
+      <ellipse cx="400" cy="400" rx="399" ry="399"></ellipse>
+    </svg>
+    <div class="mission-bridge__blur"></div>
+  </div>
+  <div class="mission-bridge__content">
+    <div class="mission-bridge__logo"><LoaderLogo maskId={maskId} /></div>
+    <Heading class="mission-bridge__title">
+      {lines.map((line) => <span class="mission-bridge__title-line">{line}</span>)}
+    </Heading>
+    <p class="mission-bridge__text" set:html={text} />
+    <div class="mission-bridge__cta">
+      {ctas.map((cta) => <PillButton href={cta.href} variant={cta.variant}>{cta.label}</PillButton>)}
+    </div>
+  </div>
+</section>

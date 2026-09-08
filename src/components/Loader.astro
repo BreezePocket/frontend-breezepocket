@@ -1,0 +1,23 @@
+---
+import LoaderLogo from './LoaderLogo.astro';
+/** Full-screen intro loader shown on the home page until the WebGL scene is ready. */
+---
+<div id="loader" class="flx-center" aria-hidden="true">
+  <LoaderLogo maskId="loader-arrow-mask" />
+  <svg class="loader__ellipse loader__ellipse--outer" viewBox="0 0 1500 800" aria-hidden="true">
+    <defs>
+      <mask id="mask-outer">
+        <path d="M 750 1 A 749 399 0 0 1 750 799 A 749 399 0 0 1 750 1" fill="none" stroke="white" stroke-width="4" pathLength="3700" class="loader__draw loader__draw--outer"></path>
+      </mask>
+    </defs>
+    <ellipse cx="750" cy="400" rx="749" ry="399" mask="url(#mask-outer)"></ellipse>
+  </svg>
+  <svg class="loader__ellipse loader__ellipse--inner" viewBox="0 0 800 800" aria-hidden="true">
+    <defs>
+      <mask id="mask-inner">
+        <path d="M 400 1 A 399 399 0 0 1 400 799 A 399 399 0 0 1 400 1" fill="none" stroke="white" stroke-width="4" pathLength="2520" class="loader__draw loader__draw--inner"></path>
+      </mask>
+    </defs>
+    <ellipse cx="400" cy="400" rx="399" ry="399" mask="url(#mask-inner)"></ellipse>
+  </svg>
+</div>

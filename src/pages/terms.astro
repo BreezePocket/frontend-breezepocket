@@ -1,0 +1,16 @@
+---
+import '@/styles/pages/privacy.css';
+import Base from '@/layouts/Base.astro';
+import LegalLayout from '@/components/LegalLayout.astro';
+import { termsMeta, termsSections } from '@/data/terms';
+---
+<Base page="terms" title="Terms of Service" description="The terms governing your use of the Vectr website and services.">
+  <LegalLayout
+    title={termsMeta.heroTitle}
+    text={termsMeta.heroText}
+    navLabel={termsMeta.navLabel}
+    updated={termsMeta.updated}
+    sections={termsSections}
+    contactEmail={termsMeta.contactEmail}
+  />
+</Base>
