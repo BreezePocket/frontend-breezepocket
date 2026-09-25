@@ -14,7 +14,7 @@ export interface LegalSection {
 export const privacyMeta = {
   heroTitle: 'Privacy Policy',
   heroText:
-    'We take your privacy seriously. This page describes the personal information we gather, the ways we use it, and the steps we take to keep it safe while you use the BreezePocket website and app.',
+    'We take your privacy seriously. This page describes the personal information we gather, the ways we use it, and the steps we take to keep it safe while you use the PAYtience website and app.',
   navLabel: 'Privacy policy navigation',
   updated: 'Last updated: September 2026',
   contactEmail: site.privacyEmail,
@@ -35,7 +35,7 @@ export const privacySections: readonly LegalSection[] = [
         <li>Your organisation and role when you request early access on behalf of a team</li>
         <li>Anything else you choose to include in a message to us</li>
       </ul>
-      <p><strong>Wallet and on-chain data.</strong> When you connect a wallet to the BreezePocket app, we see your public wallet address and the transactions you make through our contracts. Activity on the Solana blockchain is public by design and can be viewed by anyone; we do not control that ledger and cannot remove records from it. We never receive your private keys or seed phrase.</p>
+      <p><strong>Wallet and on-chain data.</strong> When you connect a wallet to the PAYtience app, we see your public wallet address and the transactions you make through our contracts. Activity on the Solana blockchain is public by design and can be viewed by anyone; we do not control that ledger and cannot remove records from it. We never receive your private keys or seed phrase.</p>
       <p><strong>Information gathered automatically.</strong> We may use privacy-respecting analytics to understand how the site and app are used, such as which pages are visited and how features perform. Our hosting provider also records ordinary server logs (IP address, browser type, requested page and timestamp) for security and troubleshooting, and those logs are purged on a rolling basis.</p>
     `,
   },
@@ -52,7 +52,7 @@ export const privacySections: readonly LegalSection[] = [
         <li><strong>Keeping in touch:</strong> answering questions and sending product or service notices</li>
         <li><strong>Improving the product:</strong> understanding which features are used and where people get stuck</li>
         <li><strong>Security and compliance:</strong> protecting our systems, detecting misuse and meeting legal obligations, including eligibility checks where required</li>
-        <li><strong>Marketing:</strong> occasionally telling you about BreezePocket updates; you can opt out whenever you like</li>
+        <li><strong>Marketing:</strong> occasionally telling you about PAYtience updates; you can opt out whenever you like</li>
       </ul>
     `,
   },
@@ -66,7 +66,7 @@ export const privacySections: readonly LegalSection[] = [
         <li><strong>Service providers:</strong> companies that host our site, deliver our email or run analytics act under contracts that restrict them to the work we hire them for</li>
         <li><strong>The Solana network:</strong> transactions you sign are broadcast to the public blockchain, where your wallet address and transaction details are visible to anyone</li>
         <li><strong>Legal reasons:</strong> when a law, court order or government request obliges us to disclose information, or when disclosure is needed to protect people or property</li>
-        <li><strong>Corporate changes:</strong> if BreezePocket is merged, acquired or sells its assets, your information may transfer to the new owner under the same protections</li>
+        <li><strong>Corporate changes:</strong> if PAYtience is merged, acquired or sells its assets, your information may transfer to the new owner under the same protections</li>
       </ul>
     `,
   },
@@ -99,7 +99,7 @@ export const privacySections: readonly LegalSection[] = [
         <li>Written agreements with every vendor that processes data for us</li>
         <li>Periodic review of our systems and practices</li>
       </ul>
-      <p>BreezePocket is non-custodial: we never hold your funds or your private keys, so there is nothing of that kind for us to lose. No online service can promise perfect security, however. If we learn of a breach affecting your information, we will notify you and the relevant authorities as the law requires.</p>
+      <p>PAYtience is non-custodial: we never hold your funds or your private keys, so there is nothing of that kind for us to lose. No online service can promise perfect security, however. If we learn of a breach affecting your information, we will notify you and the relevant authorities as the law requires.</p>
     `,
   },
   {
@@ -143,7 +143,7 @@ export const privacySections: readonly LegalSection[] = [
     title: 'Third-Party Services',
     nav: 'Third-Party Services',
     html: `
-      <p>A small number of outside services help us run BreezePocket. Each one receives only the information needed for its task:</p>
+      <p>A small number of outside services help us run PAYtience. Each one receives only the information needed for its task:</p>
       <ul>
         <li><strong>The Solana network:</strong> processes and records the transactions you sign; this data is public and not controlled by us</li>
         <li><strong>Wallet providers:</strong> apps such as Phantom, Solflare or the Seeker wallet hold your keys and sign transactions; their own privacy policies apply</li>
@@ -171,7 +171,7 @@ export const privacySections: readonly LegalSection[] = [
     title: 'Children&#39;s Privacy',
     nav: 'Children&#39;s Privacy',
     html: `
-      <p>BreezePocket is intended for adults and we do not knowingly collect personal information from anyone under 18. If you believe a minor has provided information to us, please contact us and we will delete it promptly.</p>
+      <p>PAYtience is intended for adults and we do not knowingly collect personal information from anyone under 18. If you believe a minor has provided information to us, please contact us and we will delete it promptly.</p>
     `,
   },
   {

@@ -7,8 +7,8 @@ export interface WaitlistSection {
 }
 
 export const waitlistHero = {
-  title: 'Be first when<br/>the breeze arrives.',
-  text: 'BreezePocket is launching soon on Solana, with Seeker right after. Join the waitlist and we will let you know the moment your spot opens.',
+  title: 'Be first to get<br/>paid for patience.',
+  text: 'PAYtience is launching soon on Solana, with Seeker right after. Join the waitlist and we will let you know the moment your spot opens.',
   cta: 'Join the Waitlist',
 } as const;
 
@@ -20,13 +20,13 @@ export const waitlistSections: readonly WaitlistSection[] = [
   },
   {
     title: 'Built for holders, not traders.',
-    text: 'No charts, no jargon, no positions to babysit. BreezePocket takes the strategies professionals use to earn on assets they already hold and turns them into a single question: what price would make you happy? Everything else is handled for you.',
+    text: 'No charts, no jargon, no positions to babysit. PAYtience takes the strategies professionals use to earn on assets they already hold and turns them into a single question: what price would make you happy? Everything else is handled for you.',
     image: { src: '/img/waitlist-holders.svg', alt: 'Illustration of a relaxed holder with coins at rest', width: 1600, height: 1000 },
   },
   {
     title: 'Solana first. Seeker next.',
-    text: 'BreezePocket runs on Solana for fast, low-cost settlement and stays non-custodial: your funds live in your wallet and in on-chain contracts you can see. We are launching on Solana first and shipping on Seeker, the Solana mobile phone, right after.',
-    image: { src: '/img/waitlist-seeker.svg', alt: 'Illustration of the BreezePocket app on a Seeker phone', width: 1600, height: 1000 },
+    text: 'PAYtience runs on Solana for fast, low-cost settlement and stays non-custodial: your funds live in your wallet and in on-chain contracts you can see. We are launching on Solana first and shipping on Seeker, the Solana mobile phone, right after.',
+    image: { src: '/img/waitlist-seeker.svg', alt: 'Illustration of the PAYtience app on a Seeker phone', width: 1600, height: 1000 },
   },
 ];
 
@@ -68,7 +68,7 @@ export const waitlistModal = {
     submit: 'Something went wrong. Please try again.',
   },
   disclaimer:
-    'By joining the waitlist you agree that BreezePocket may use the details you provide to manage the waitlist and contact you about early access. Your information is never sold or shared for advertising. See our ',
+    'By joining the waitlist you agree that PAYtience may use the details you provide to manage the waitlist and contact you about early access. Your information is never sold or shared for advertising. See our ',
   disclaimerDetails:
     'Information collected: name, email, Telegram or X handle, the assets you hold, how you describe yourself, and an optional Solana wallet address. Submissions reach our team through an email provider and are kept for up to 24 months. Your progress in this form is stored in your browser until you submit.',
   success: {

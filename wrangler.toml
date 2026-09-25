@@ -1,5 +1,8 @@
 # Cloudflare Pages project config (static site, free tier).
 # Deploy with: npm run deploy   (requires `npx wrangler login` or CLOUDFLARE_API_TOKEN)
+#
+# "breezepocket" is the internal Cloudflare project id that serves https://paytience.app.
+# Cloudflare cannot rename a Pages project, so this id stays; it is never shown to visitors.
 name = "breezepocket"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-09-08"

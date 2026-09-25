@@ -1,6 +1,6 @@
 ---
 /**
- * Seeker phone mockup showing the BreezePocket app screen.
+ * Seeker phone mockup showing the PAYtience app screen.
  * Self-contained: fills its parent box (e.g. `.standards__image`) and scales
  * with the container width via `container-type: inline-size` + `cqw` units.
  * All dimensions are expressed as multiples of `--u` (1 unit = 1px on an
@@ -18,17 +18,14 @@ const tiles = [
 
 <div class="seeker">
   <p class="seeker__sr">
-    Illustration of the BreezePocket app on a Solana Seeker phone. The screen shows a
+    Illustration of the PAYtience app on a Solana Seeker phone. The screen shows a
     "Sell at" target grid for SOL, priced at $184.20, with $250 selected at an
     illustrative 12.4% yield for 10 SOL. Below $250 you keep your 10 SOL plus income;
     above $250 it is sold at $250 plus income. A "Start earning" button completes the screen.
   </p>
 
   <div class="seeker__stage" aria-hidden="true">
-    <svg class="seeker__wave" viewBox="0 0 353 182" focusable="false">
-      <path d="M14 96C70 40 160 8 250 14c40 3 75-2 98-8-18 46-73 80-143 78-65-2-125-10-191 12Z"/>
-      <path d="M8 172c56-56 146-88 236-82 40 3 76-2 104-8-18 46-80 88-150 86-66-2-124-18-190 4Z"/>
-    </svg>
+    <img class="seeker__emblem" src="/brand/logo-mark-white.png" alt="" width="456" height="518" loading="lazy" decoding="async" />
 
     <div class="seeker__caption">
       <span class="seeker__pill">Coming to Seeker</span>
@@ -47,8 +44,8 @@ const tiles = [
             <span class="app__status-icons"><i class="app__sig"></i><i class="app__bat"></i></span>
           </div>
           <div class="app__header">
-            <img src="/brand/logo-mark.png" alt="" width="353" height="182" loading="lazy" decoding="async" />
-            <span>BreezePocket</span>
+            <img src="/brand/logo-mark.png" alt="" width="456" height="518" loading="lazy" decoding="async" />
+            <span>PAYtience</span>
           </div>
           <p class="app__headline">Earn while waiting to sell</p>
           <div class="app__asset"><i class="app__dot"></i><b>SOL</b><span>· $184.20</span></div>
@@ -127,14 +124,13 @@ const tiles = [
       transparent 55%
     );
   }
-  .seeker__wave {
+  .seeker__emblem {
     position: absolute;
-    left: calc(-70 * var(--u));
-    bottom: calc(-60 * var(--u));
-    width: calc(640 * var(--u));
+    left: calc(-40 * var(--u));
+    bottom: calc(-90 * var(--u));
+    width: calc(300 * var(--u));
     height: auto;
-    fill: #fcfcfc;
-    opacity: 0.13;
+    opacity: 0.14;
   }
 
   /* Caption (desktop only) */
@@ -459,10 +455,10 @@ const tiles = [
       left: calc(125 * var(--u));
       top: calc(14 * var(--u));
     }
-    .seeker__wave {
-      left: calc(-120 * var(--u));
-      bottom: calc(-40 * var(--u));
-      width: calc(560 * var(--u));
+    .seeker__emblem {
+      left: calc(-60 * var(--u));
+      bottom: calc(-60 * var(--u));
+      width: calc(260 * var(--u));
     }
   }
   @container (max-width: 420px) {

@@ -28,8 +28,6 @@ const STACKS: StackSpec[] = [
 const SLABS = [
   { dx: 0, dz: -44, w: 14, h: 5, d: 8 },
   { dx: 40, dz: -38, w: 10, h: 3, d: 8 },
-  { dx: 44, dz: 26, w: 8, d: 10, h: 5 },
-  { dx: 30, dz: 38, w: 12, h: 3, d: 8 },
   { dx: 8, dz: 42, w: 10, h: 5, d: 8 },
   { dx: -30, dz: 36, w: 10, h: 3, d: 10 },
   { dx: -46, dz: 20, w: 8, h: 5, d: 8 },

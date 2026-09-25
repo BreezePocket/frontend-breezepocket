@@ -1,5 +1,5 @@
 /** In-progress waitlist state, persisted to sessionStorage until the form is submitted. */
-export const STORAGE_KEY = 'breezepocket-waitlist-form';
+export const STORAGE_KEY = 'paytience-waitlist-form';
 
 export interface WaitlistState {
   fullName: string;

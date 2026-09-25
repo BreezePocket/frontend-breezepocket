@@ -4,26 +4,23 @@ import type { BuildContext } from './types';
 
 /**
  * Section D — accumulation: rows of coin stacks that grow from left to right, a long "ledger"
- * hall, and a plaza carrying the BreezePocket wave emblem (fades in with logoRatio).
+ * hall, and a plaza carrying the PAYtience "P" emblem (fades in with logoRatio).
  */
 const PLAZA = { dx: -40, dz: 8, size: 30 };
 
-/** Two stacked swoosh shapes approximating the logo mark, in a 100×60 design space. */
+/** The PAYtience "P": a stem with a rounded foot and a round bowl, in a 100×100 design space. */
 function emblemGeometry(): THREE.ExtrudeGeometry {
-  const upper = new THREE.Shape();
-  upper.moveTo(0, 30);
-  upper.bezierCurveTo(22, 58, 62, 62, 100, 52);
-  upper.bezierCurveTo(86, 40, 62, 40, 42, 32);
-  upper.bezierCurveTo(28, 27, 12, 24, 0, 30);
-  const lower = new THREE.Shape();
-  lower.moveTo(0, 10);
-  lower.bezierCurveTo(20, 34, 56, 38, 90, 30);
-  lower.bezierCurveTo(78, 20, 56, 19, 38, 12);
-  lower.bezierCurveTo(26, 7, 12, 4, 0, 10);
-  const geometry = new THREE.ExtrudeGeometry([upper, lower], { depth: 0.8, bevelEnabled: false });
+  const p = new THREE.Shape();
+  p.moveTo(0, 100);
+  p.lineTo(62, 100);
+  p.absarc(62, 69, 31, Math.PI / 2, -Math.PI / 2, true); // bowl, clockwise to its underside
+  p.lineTo(36, 38);
+  p.quadraticCurveTo(36, 0, 0, 0); // curved foot
+  p.lineTo(0, 100);
+  const geometry = new THREE.ExtrudeGeometry(p, { depth: 0.8, bevelEnabled: false, curveSegments: 24 });
   geometry.center();
   geometry.rotateX(-Math.PI / 2);
-  geometry.scale(0.24, 1, 0.24);
+  geometry.scale(0.22, 1, 0.22);
   return geometry;
 }
 

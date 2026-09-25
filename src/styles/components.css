@@ -377,7 +377,7 @@
   text-align: center;
 }
 .mission-bridge__logo {
-  width: 160px;
+  width: 104px;
 }
 .mission-bridge__logo .loader__logo {
   display: block;
@@ -449,7 +449,7 @@
   }
   .mission-bridge__logo,
   .mission-bridge__logo .loader__logo {
-    width: 110px;
+    width: 76px;
   }
   .mission-bridge__title {
     font-size: 32px;
@@ -1078,65 +1078,16 @@ input:focus + .form__checkbox-icon {
   z-index: 100000;
 }
 #loader .loader__logo {
-  color: var(--color-highlight);
+  position: relative;
   z-index: 1;
-  width: clamp(80px, min((100vw - 120px) * 0.064, (100vh - 60px) * 0.12), 96px);
-  height: clamp(
-    80px,
-    min((100vw - 120px) * 0.064, (100vh - 60px) * 0.12),
-    96px
-  );
-  animation: logo-rotate 1.5s ease-out forwards;
+  display: block;
+  width: clamp(72px, 7vw, 104px);
+  animation: logo-rise 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-#loader .loader__logo .arrow-mask-line {
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  animation: draw-line 0.5s ease-out both 0.8s;
-}
-#loader .loader__logo [id^="cube_"] {
-  animation:
-    cube-fade 0.4s ease both,
-    cube-slide 0.4s ease-out both;
-}
-#loader .loader__logo #cube_01 {
-  --cube-tx: 0px;
-  --cube-ty: -20px;
-  animation-delay: 0s;
-}
-#loader .loader__logo #cube_02 {
-  --cube-tx: 14px;
-  --cube-ty: -14px;
-  animation-delay: 0.08s;
-}
-#loader .loader__logo #cube_03 {
-  --cube-tx: 20px;
-  --cube-ty: 0px;
-  animation-delay: 0.16s;
-}
-#loader .loader__logo #cube_04 {
-  --cube-tx: 14px;
-  --cube-ty: 14px;
-  animation-delay: 0.24s;
-}
-#loader .loader__logo #cube_05 {
-  --cube-tx: 0px;
-  --cube-ty: 20px;
-  animation-delay: 0.32s;
-}
-#loader .loader__logo #cube_06 {
-  --cube-tx: -14px;
-  --cube-ty: 14px;
-  animation-delay: 0.4s;
-}
-#loader .loader__logo #cube_07 {
-  --cube-tx: -20px;
-  --cube-ty: 0px;
-  animation-delay: 0.48s;
-}
-#loader .loader__logo #cube_08 {
-  --cube-tx: -14px;
-  --cube-ty: -14px;
-  animation-delay: 0.56s;
+#loader .loader__logo-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 #loader .loader__ellipse {
   position: absolute;
@@ -1187,7 +1138,7 @@ input:focus + .form__checkbox-icon {
 }
 @media (max-width: 820px) {
   #loader .loader__logo {
-    width: 96px;
+    width: 64px;
   }
   #loader .loader__ellipse--outer {
     width: 330px;

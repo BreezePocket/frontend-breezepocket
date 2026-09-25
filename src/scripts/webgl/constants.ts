@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 
-/** Scene palette: BreezePocket blues plus the page background and surface tints. */
+/** Scene palette: PAYtience blues plus the page background and surface tints. */
 export const PALETTE = {
   main: 0xa7d0fb,
   floor: 0x94bbe5,
-  primary: 0x027bf6,
+  primary: 0x0b5cff,
   redLines: 0xff4d67,
   blueLines: 0x0e94fb,
   pulse: 0x57cdff,
@@ -14,8 +14,8 @@ export const PALETTE = {
   plaza: 0xf7fafd,
   /** Token coins and accents. */
   coin: 0xf6f9fc,
-  coinBlue: 0x027bf6,
-  coinCyan: 0x13eafb,
+  coinBlue: 0x0b5cff,
+  coinCyan: 0x2fb8ff,
   stable: 0x2fd6c9,
   sell: 0xff4d67,
   buy: 0x2fd6c9,

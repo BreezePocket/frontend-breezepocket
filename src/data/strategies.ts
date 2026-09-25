@@ -11,7 +11,7 @@ export interface Strategy {
 export const strategiesPage = {
   hero: {
     title: 'Four ways to get paid<br/>while you wait',
-    text: 'Whether you are holding, waiting to sell, waiting to buy, or building a position, there is a BreezePocket strategy that pays you for your patience.',
+    text: 'Whether you are holding, waiting to sell, waiting to buy, or building a position, there is a PAYtience strategy that pays you for your patience.',
   },
   sectionTitle: 'Our Strategies',
   heroImage: {

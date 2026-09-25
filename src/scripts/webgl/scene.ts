@@ -5,7 +5,7 @@
  *   A  holdings      token stacks on a plaza          progress 0     "pick your asset"
  *   B  sell target   rising price bars + target line  0.2–0.5        "name your price"
  *   C  buy target    dipping bars + target line below 0.75           "get paid while you wait"
- *   D  accumulate    growing coin rows + wave emblem  0.9–1          "filled or free to go again"
+ *   D  accumulate    growing coin rows + "P" emblem  0.9–1          "filled or free to go again"
  * The districts are linked by red routes with blue signal lines (continuous pulse); the price grid
  * beside the buy chart fades in over TIMING.grid and the emblem past TIMING.emblem.
  *

@@ -5,7 +5,7 @@ import { qs, qsa, show } from '../utils';
  * Get Early Access page: entrance reveal + the request form (validation, localStorage draft,
  * JSON POST to /api/early-access, success state).
  */
-const STORAGE_KEY = 'breezepocket-early-access-form';
+const STORAGE_KEY = 'paytience-early-access-form';
 const ENDPOINT = '/api/early-access';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

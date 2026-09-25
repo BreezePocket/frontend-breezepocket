@@ -1,8 +1,8 @@
-# BreezePocket — landing site
+# PAYtience — landing site
 
 **Get paid while waiting for the crypto price you want.**
 
-BreezePocket is a Solana app for people who hold crypto and are happy to wait. Deposit SOL, BTC, ETH or USDC, name the price you would gladly sell (or buy) at, and earn income while the market gets there. If your price is reached, the trade fills at that price and you keep the income; if not, you keep your coins plus the income and can set a new target. Built on Solana, coming to the Seeker phone. This repository is the marketing site: a static Astro build with a scroll-driven WebGL hero, strategy pages, a waitlist flow, an early-access form and legal pages.
+PAYtience is a Solana app for people who hold crypto and are happy to wait. Deposit SOL, BTC, ETH or USDC, name the price you would gladly sell (or buy) at, and earn income while the market gets there. If your price is reached, the trade fills at that price and you keep the income; if not, you keep your coins plus the income and can set a new target. Built on Solana, coming to the Seeker phone. This repository is the marketing site: a static Astro build with a scroll-driven WebGL hero, strategy pages, a waitlist flow, an early-access form and legal pages.
 
 ## Stack
 
@@ -67,7 +67,7 @@ Each page renders `<Base page="…">`; the `page` key sets `data-page` on the bo
 
 ## The WebGL scene
 
-`src/scripts/webgl/` builds a low-poly world from primitives: a plaza of token stacks (holdings), a rising price chart with a glowing sell target, a dipping chart with a buy target beside a price grid, and rows of growing coin stacks with the wave emblem (accumulation), linked by route lines with travelling pulses. The camera flies from a wide hero view into each district as the page scrolls.
+`src/scripts/webgl/` builds a low-poly world from primitives: a plaza of token stacks (holdings), a rising price chart with a glowing sell target, a dipping chart with a buy target beside a price grid, and rows of growing coin stacks with the "P" emblem (accumulation), linked by route lines with travelling pulses. The camera flies from a wide hero view into each district as the page scrolls.
 
 - **Contract**: `webgl/index.ts` (`createScene(mount)` → `setProgress`, `setSection`, `playEntrance`, `setPaused`, `ready`, `destroy`).
 - **Camera**: `webgl/camera.ts` — edit `KEYFRAMES` (`progress`, `target`, `azimuth`, `pitch`, `distance`).

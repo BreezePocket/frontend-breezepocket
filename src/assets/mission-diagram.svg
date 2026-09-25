@@ -24,9 +24,9 @@
   <rect x="104" y="440" width="228" height="40" rx="20" fill="#f1f4f7"/>
   <text x="218" y="466" fill="#7a92ad" text-anchor="middle" style="font-size:17px;font-weight:500">Waiting costs you time</text>
 
-  <!-- Right: waiting with BreezePocket -->
+  <!-- Right: waiting with PAYtience -->
   <rect x="688" y="168" width="592" height="356" rx="24" fill="#fcfcfc" stroke="#1877f6" stroke-width="3"/>
-  <text x="728" y="222" fill="#0b2350" style="font-size:24px;font-weight:500">Waiting with BreezePocket</text>
+  <text x="728" y="222" fill="#0b2350" style="font-size:24px;font-weight:500">Waiting with PAYtience</text>
   <!-- earning coin -->
   <ellipse cx="784" cy="330" rx="46" ry="16" fill="#0f5fd0"/>
   <rect x="738" y="286" width="92" height="44" fill="url(#md-coin)"/>

@@ -3,14 +3,14 @@
 export const missionHero = {
   title: 'Waiting should get paid.',
   text:
-    'Most crypto holders are already waiting: for a price to sell at, a dip to buy, or simply for the long run to play out. BreezePocket turns that waiting into income, on Solana, without asking you to become a trader.',
-  image: { src: '/img/mission-hero.svg', alt: 'Soft gradient waves suggesting a calm breeze', width: 3008, height: 1600 },
+    'Most crypto holders are already waiting: for a price to sell at, a dip to buy, or simply for the long run to play out. PAYtience turns that waiting into income, on Solana, without asking you to become a trader.',
+  image: { src: '/img/mission-hero.svg', alt: 'Abstract gradient shapes in the PAYtience blues', width: 3008, height: 1600 },
 };
 
 export const missionSubSection = {
   title: 'The real cost of idle crypto',
   body:
-    'Coins sitting in a wallet do nothing while you wait for the price you want. The usual answers are active trading, DeFi strategies, or options and derivatives, all of which are hard to understand and need constant attention. Most people do not want a second job. They want something simple: name a price, get paid, and get on with their day. That is exactly what BreezePocket does.',
+    'Coins sitting in a wallet do nothing while you wait for the price you want. The usual answers are active trading, DeFi strategies, or options and derivatives, all of which are hard to understand and need constant attention. Most people do not want a second job. They want something simple: name a price, get paid, and get on with their day. That is exactly what PAYtience does.',
 };
 
 export interface DrawerBullet {
@@ -43,11 +43,11 @@ export const problem = {
 
 export const engine = {
   number: '02',
-  title: 'The BreezePocket Engine',
+  title: 'The PAYtience Engine',
   image: { src: '/img/mission-engine.svg', alt: 'Illustration of a price target with income paid upfront', width: 400, height: 400 },
   subtitle: 'Name a price. Get paid. That is it.',
   body: [
-    'BreezePocket takes the strategies professionals use to earn on assets they already hold and hides all of the machinery. You tell us the price you’d happily sell or buy at and a date; we handle the options mechanics on-chain.',
+    'PAYtience takes the strategies professionals use to earn on assets they already hold and hides all of the machinery. You tell us the price you’d happily sell or buy at and a date; we handle the options mechanics on-chain.',
     'Your income arrives upfront. Your trade fills only at your price. Your funds never leave your wallet or the contracts you can see. Three things make it work:',
   ],
   features: [
@@ -62,7 +62,7 @@ export const outcome = {
   title: 'The Outcome',
   image: { src: '/img/mission-outcome.svg', alt: 'Illustration of a balance growing over time', width: 400, height: 400 },
   subtitle: 'Simple income for everyday holders',
-  lead: 'With BreezePocket, your waiting finally works for you.',
+  lead: 'With PAYtience, your waiting finally works for you.',
   items: [
     {
       number: '01',
@@ -84,7 +84,7 @@ export const outcome = {
 
 export const missionBridge = {
   lines: ['Waiting is the one thing ', 'every crypto holder does. ', 'Now it pays.'],
-  text: 'BreezePocket is non-custodial, built on Solana, and coming to Seeker. Set a price, get paid, and let the market come to you.',
+  text: 'PAYtience is non-custodial, built on Solana, and coming to Seeker. Set a price, get paid, and let the market come to you.',
   ctas: [
     { label: 'Join Waitlist', href: '/waitlist', variant: 'glass' },
     { label: 'View Early Prototype', href: 'https://app.paytience.app/', variant: 'dark' },

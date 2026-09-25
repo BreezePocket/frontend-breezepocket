@@ -24,7 +24,7 @@ export const earlyAccess = {
     { value: 'other', label: 'Other' },
   ],
   disclaimer: {
-    text: 'When you submit this form, you agree that BreezePocket may use the details you provide to follow up on your early access request. We never sell this information or pass it on for advertising. Read our',
+    text: 'When you submit this form, you agree that PAYtience may use the details you provide to follow up on your early access request. We never sell this information or pass it on for advertising. Read our',
     linkLabel: 'Privacy Policy',
     linkHref: '/privacy',
     readMore: 'Read more',

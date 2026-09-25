@@ -99,18 +99,18 @@ export const features: readonly FeatureItem[] = [
     iconAlt: 'Auto-Accumulate Crypto icon',
     title: 'Auto-Accumulate Crypto',
     description:
-      'Rather than taking income, let BreezePocket roll your targets and accumulate more of an asset at prices you set. A patient, hands-off way to build a position over time.',
+      'Rather than taking income, let PAYtience roll your targets and accumulate more of an asset at prices you set. A patient, hands-off way to build a position over time.',
   },
 ];
 
 export const standards: StandardsCopy = {
   title: ['Built on Solana. ', 'Coming to ', 'Seeker.'],
   description:
-    'BreezePocket runs on Solana for fast, low-cost settlement and will ship on Seeker, the Solana mobile phone, so setting a price target is as easy as checking your balance.',
+    'PAYtience runs on Solana for fast, low-cost settlement and will ship on Seeker, the Solana mobile phone, so setting a price target is as easy as checking your balance.',
   cta: { label: 'Explore strategies', href: '/strategies' },
 };
 
-export const faqTitle = 'How BreezePocket works, and what to expect.';
+export const faqTitle = 'How PAYtience works, and what to expect.';
 
 export const faq: readonly FaqItem[] = [
   {
@@ -126,12 +126,12 @@ export const faq: readonly FaqItem[] = [
   {
     question: 'What are the risks?',
     answer:
-      'If the price crosses your target, you sell or buy at that price and miss any further move beyond it. Crypto prices are volatile, and the value of what you hold can fall while you wait. Like any on-chain product, BreezePocket carries smart-contract and market risk, and income is never guaranteed. Nothing on this site is financial advice, so only deposit what you are comfortable holding.',
+      'If the price crosses your target, you sell or buy at that price and miss any further move beyond it. Crypto prices are volatile, and the value of what you hold can fall while you wait. Like any on-chain product, PAYtience carries smart-contract and market risk, and income is never guaranteed. Nothing on this site is financial advice, so only deposit what you are comfortable holding.',
   },
   {
     question: 'Which assets and wallets are supported?',
     answer:
-      'SOL, BTC, ETH and USDC to start, with more assets over time. BreezePocket works with Solana wallets such as Phantom and Solflare, and with Seeker’s built-in wallet once we ship on the phone. It is non-custodial: your funds stay in your wallet and in on-chain contracts, never in an account we hold.',
+      'SOL, BTC, ETH and USDC to start, with more assets over time. PAYtience works with Solana wallets such as Phantom and Solflare, and with Seeker’s built-in wallet once we ship on the phone. It is non-custodial: your funds stay in your wallet and in on-chain contracts, never in an account we hold.',
   },
 ];
 

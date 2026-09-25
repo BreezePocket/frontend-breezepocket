@@ -1,3 +1,3 @@
-- `logo-full.png` (806x321) — full lockup: the two-wave mark beside the "BreezePocket" wordmark; `logo-full-white.png` is the same lockup in white for dark backgrounds.
-- `logo-mark.png` (353x182) — the mark alone: two stacked blue-to-cyan wave shapes; `logo-mark-white.png` is the white version. Use for favicons, app headers and small spaces.
-- `logo-wordmark.png` — the "BreezePocket" wordmark alone, no mark; `logo-wordmark-white.png` is the white version.
+- `logo-full.png` (1214x300) — horizontal lock-up: the "P" mark beside the "PAYtience" wordmark; `logo-full-white.png` is the white version for dark backgrounds.
+- `logo-mark.png` (456x518) — the "P" mark alone; `logo-mark-white.png` is the white version. Used for favicons, the loader and small spaces.
+- `logo-wordmark.png` (878x146) — "PAYtience" set in type ("PAY" heavy navy, "tience" logo blue); `logo-wordmark-white.png` is used in the footer.
