@@ -14,7 +14,8 @@ export const site = {
   ],
   ctas: {
     apply: { label: 'Join Waitlist', href: '/waitlist' },
-    request: { label: 'Get Early Access', href: '/early-access' },
+    /** Points at the live prototype app, not a page on this site. */
+    request: { label: 'View Early Prototype', href: 'https://app.paytience.app/' },
   },
   footerNav: [
     { label: 'Strategies', href: '/strategies' },

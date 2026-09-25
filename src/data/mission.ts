@@ -87,6 +87,6 @@ export const missionBridge = {
   text: 'BreezePocket is non-custodial, built on Solana, and coming to Seeker. Set a price, get paid, and let the market come to you.',
   ctas: [
     { label: 'Join Waitlist', href: '/waitlist', variant: 'glass' },
-    { label: 'Get Early Access', href: '/early-access', variant: 'dark' },
+    { label: 'View Early Prototype', href: 'https://app.paytience.app/', variant: 'dark' },
   ] as const,
 };
